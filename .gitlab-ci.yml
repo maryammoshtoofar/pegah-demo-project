@@ -1,0 +1,102 @@
+﻿variables:
+  GIT_SUBMODULE_STRATEGY: normal
+
+stages:
+  - deploy
+  - testLogic
+  - testUI
+
+dev-deploy:
+  environment:
+     name: DEV
+     url: http://dev.pegah-framework.firm/
+  stage: deploy
+  variables:
+    ASPNETCORE_ENVIRONMENT: Dev
+  script:
+    - cd PegahFramework.React/; yarn install --ignore-optional; cd ..
+    - dotnet build PegahFramework.sln /p:Configuration=Release /p:Platform=x64 /p:VisualStudioVersion=15.0 /m
+    - cd PegahFramework.React/; yarn run build; cd ..
+    - dotnet publish PegahFramework.React/PegahFramework.React.csproj -c Release --runtime win7-x64 /p:EnableMSDeployAppOffline=true /p:PublishProfile=Dev /p:Username=$env:MSBUILD_USER /p:Password=$env:MSBUILD_PASSWORD /v:normal
+    - dotnet test PegahFramework.Test.Environment/PegahFramework.Test.Environment.csproj -c Release
+  tags:
+    - desrv148
+  except: 
+    - TEST
+    - LIVE
+
+unit-tests-logic:
+  environment:
+     name: DEV
+     url: http://dev.pegah-framework.firm/
+  stage: testLogic
+  variables:
+    ASPNETCORE_ENVIRONMENT: Dev
+  script:
+  - dotnet test PegahFramework.Test.Logic/PegahFramework.Test.Logic.csproj -c Release
+  allow_failure: true
+  tags:
+    - desrv148
+  except: 
+    - TEST
+    - LIVE
+
+unit-tests-ui:
+  environment:
+     name: DEV
+     url: http://dev.pegah-framework.firm/
+  stage: testUI
+  variables:
+    ASPNETCORE_ENVIRONMENT: dev
+  script:
+    - dotnet test PegahFramework.Test.React/PegahFramework.Test.React.csproj -c Release
+  allow_failure: true
+  tags:
+    - desrv148
+  except: 
+    - TEST
+    - LIVE
+
+test-deploy:
+  environment:
+    name: TEST
+    url: http://test.pegah-framework.firm
+  stage: deploy
+  variables:
+    ASPNETCORE_ENVIRONMENT: test
+  script:
+    - cd PegahFramework.React/; yarn install --ignore-optional; cd ..
+    - dotnet build PegahFramework.sln /p:Configuration=Release /p:Platform=x64 /p:VisualStudioVersion=15.0 /m
+    - cd PegahFramework.React/; yarn run build; cd ..
+    - dotnet publish PegahFramework.React/PegahFramework.React.csproj -c Release --runtime win7-x64 /p:EnableMSDeployAppOffline=true /p:PublishProfile=Test /p:Username=$env:MSBUILD_USER /p:Password=$env:MSBUILD_PASSWORD /v:m
+    - cd PegahFramework.Terminal/bin/Release/netcoreapp2.1/
+    - dotnet PegahFramework.Terminal.dll sql
+    - dotnet PegahFramework.Terminal.dll csharp
+    - dotnet PegahFramework.Terminal.dll auth
+    - cd ../../../..
+  tags:
+    - desrv148
+  only: 
+    - TEST
+
+live-deploy:
+  environment:
+    name: LIVE
+    url: http://live.pegah-framework.firm
+  stage: deploy
+  variables:
+    ASPNETCORE_ENVIRONMENT: live
+  script:
+    - cd PegahFramework.React/; yarn install --ignore-optional; cd ..
+    - dotnet build PegahFramework.sln /p:Configuration=Release /p:Platform=x64 /p:VisualStudioVersion=15.0 /m
+    - cd PegahFramework.React/; yarn run build; cd ..
+    - dotnet publish PegahFramework.React/PegahFramework.React.csproj -c Release --runtime win7-x64 /p:EnableMSDeployAppOffline=true /p:PublishProfile=Live /p:Username=$env:MSBUILD_USER /p:Password=$env:MSBUILD_PASSWORD /v:m
+    - cd PegahFramework.Terminal/bin/Release/netcoreapp2.1/
+    - dotnet PegahFramework.Terminal.dll sql
+    - dotnet PegahFramework.Terminal.dll csharp
+    - dotnet PegahFramework.Terminal.dll auth
+    - cd ../../../..
+  tags:
+    - desrv148
+  only: 
+    - LIVE

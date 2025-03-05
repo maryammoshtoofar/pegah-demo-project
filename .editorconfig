@@ -1,0 +1,23 @@
+﻿root = true
+
+# Unix-style newlines with a newline ending every file
+[*]
+end_of_line = crlf
+insert_final_newline = true
+
+# Matches multiple files with brace expansion notation
+# Set default charset
+[*.{js,jsx,ts,tsx,cs}]
+charset = utf-8
+
+# 4 space indentation for cs
+[*.cs]
+indent_style = space
+indent_size = 4
+csharp_style_namespace_declarations = file_scoped:error
+dotnet_diagnostic.IDE0161.severity = error
+
+# Indentation override for all js, ts and json files
+[*.{js,jsx,ts,tsx,t4s,json}]
+indent_style = space
+indent_size = 2

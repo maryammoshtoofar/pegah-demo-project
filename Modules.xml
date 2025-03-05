@@ -1,0 +1,793 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<File>
+	<Modules>
+		<Module Name="ExampleEntities">
+			<RemoveFiles Path="PegahFramework\Customers\Company.tsx"/>
+			<RemoveFiles Path="PegahFramework\Customers\CompanyEntity.cs"/>
+			<RemoveFiles Path="PegahFramework\Customers\CustomerEntity.cs"/>
+			<RemoveFiles Path="PegahFramework\Customers\CustomersLogic.cs"/>
+			<RemoveFiles Path="PegahFramework\Customers\CustomersClient.tsx"/>
+			<RemoveFiles Path="PegahFramework\Customers\Person.tsx"/>
+			<RemoveFiles Path="PegahFramework\Customers\PersonEntity.cs"/>
+			<RemoveFiles Path="PegahFramework\Customers\PegahFramework.Customers.t4s"/>
+			<RemoveFiles Path="PegahFramework\Customers\PegahFramework.Customers.ts"/>
+			<RemoveFiles Path="PegahFramework\Customers\AddressEmbedded.cs"/>
+			<RemoveFiles Path="PegahFramework\Customers\Address.tsx"/>
+			<RemoveFiles Path="PegahFramework\Employees\Employee.tsx"/>
+			<RemoveFiles Path="PegahFramework\Employees\EmployeeEntity.cs"/>
+			<RemoveFiles Path="PegahFramework\Employees\EmployeesLogic.cs"/>
+			<RemoveFiles Path="PegahFramework\Employees\EmployeesClient.tsx"/>
+			<RemoveFiles Path="PegahFramework\Employees\RegionEntity.cs"/>
+			<RemoveFiles Path="PegahFramework\Employees\PegahFramework.Employees.t4s"/>
+			<RemoveFiles Path="PegahFramework\Employees\PegahFramework.Employees.ts"/>
+			<RemoveFiles Path="PegahFramework\Employees\TerritoryEntity.cs"/>
+			<RemoveFiles Path="PegahFramework\Orders\OrderEntity.cs"/>
+			<RemoveFiles Path="PegahFramework\Orders\Order.tsx"/>
+			<RemoveFiles Path="PegahFramework\Orders\OrderFilter.tsx"/>
+			<RemoveFiles Path="PegahFramework\Orders\OrdersLogic.cs"/>
+			<RemoveFiles Path="PegahFramework\Orders\OrdersClient.tsx"/>
+			<RemoveFiles Path="PegahFramework\Orders\PegahFramework.Orders.t4s"/>
+			<RemoveFiles Path="PegahFramework\Orders\PegahFramework.Orders.ts"/>
+			<RemoveFiles Path="PegahFramework\Products\Category.tsx"/>
+			<RemoveFiles Path="PegahFramework\Products\CategoryEntity.cs"/>
+			<RemoveFiles Path="PegahFramework\Products\Product.tsx"/>
+			<RemoveFiles Path="PegahFramework\Products\ProductEntity.cs"/>
+			<RemoveFiles Path="PegahFramework\Products\ProductsLogic.cs"/>
+			<RemoveFiles Path="PegahFramework\Products\ProductsClient.tsx"/>
+			<RemoveFiles Path="PegahFramework\Products\PegahFramework.Products.t4s"/>
+			<RemoveFiles Path="PegahFramework\Products\PegahFramework.Products.ts"/>
+			<RemoveFiles Path="PegahFramework\Products\Supplier.tsx"/>
+			<RemoveFiles Path="PegahFramework\Products\SupplierEntity.cs"/>
+			<RemoveFiles Path="PegahFramework\Shippers\ShippersClient.tsx"/>
+			<RemoveFiles Path="PegahFramework\Shippers\ShipperEntity.cs"/>
+			<RemoveFiles Path="PegahFramework\Shippers\ShippersLogic.cs"/>
+			<RemoveFiles Path="PegahFramework\Shippers\PegahFramework.Shippers.t4s"/>
+			<RemoveFiles Path="PegahFramework\Shippers\PegahFramework.Shippers.ts"/>
+			<RemoveLine Path="PegahFramework.Terminal\PegahFrameworkMigrations.cs" Line="using PegahFramework.Products;"/>
+			<RemoveLine Path="PegahFramework.Terminal\PegahFrameworkMigrations.cs" Line="using PegahFramework.Orders;"/>
+			<RemoveLine Path="PegahFramework.Terminal\Program.cs" Line="using PegahFramework.Orders;"/>
+			<RemoveLine Path="PegahFramework.Terminal\Program.cs" Line="{&quot;SO&quot;, ShowOrder},"/>
+			<RemoveLine Path="PegahFramework.Terminal\Program.cs" From="static void ShowOrder()" To="}//ShowOrder"/>
+			
+			<RemoveLine Path="PegahFramework\Starter.cs" Line="sb.Schema.Settings.ImplementedByAllPrimaryKeyTypes.Add(typeof(Guid)); //because Customer" />
+			<RemoveLine Path="PegahFramework\Starter.cs" Line="MixinDeclarations.Register&lt;OrderDetailEmbedded, OrderDetailMixin>();"/>
+			<RemoveLine Path="PegahFramework\Starter.cs" Line="sb.Schema.Settings.TypeAttributes&lt;OrderEntity>().Add(new SystemVersionedAttribute());"/>
+			<RemoveLine Path="PegahFramework\Starter.cs" From="EmployeesLogic.Start(sb);" To="ShippersLogic.Start(sb);"/>
+			<RemoveLine Path="PegahFramework\Starter.cs"
+						Line="TypeConditionLogic.Register&lt;OrderEntity>(PegahFrameworkTypeCondition.CurrentEmployee, o => o.Employee.Is(EmployeeEntity.Current));"/>
+			<RemoveLine Path="PegahFramework\Starter.cs" Line="CacheLogic.CacheTable&lt;ShipperEntity>(sb);"/>
+
+			<RemoveLine Path="PegahFramework\Starter.cs" Line="using PegahFramework.Customers;"/>
+			<RemoveLine Path="PegahFramework\Starter.cs" Line="using PegahFramework.Employees;"/>
+			<RemoveLine Path="PegahFramework\Starter.cs" Line="using PegahFramework.Orders;"/>
+			<RemoveLine Path="PegahFramework\Starter.cs" Line="using PegahFramework.Products;"/>
+			<RemoveLine Path="PegahFramework\Starter.cs" Line="using PegahFramework.Shippers;"/>
+			
+			<RemoveLine Path="PegahFramework.Test.Environment/PegahFrameworkEnvironment.cs" Line="using PegahFramework.Customers;"/>
+			<RemoveLine Path="PegahFramework.Test.Environment/PegahFrameworkEnvironment.cs" Line="using PegahFramework.Employees;"/>
+			<RemoveLine Path="PegahFramework.Test.Environment/PegahFrameworkEnvironment.cs" Line="using PegahFramework.Products;"/>
+			<RemoveLine Path="PegahFramework.Test.Environment/PegahFrameworkEnvironment.cs" Line="using PegahFramework.Shippers;"/>
+
+			<RemoveLine Path="PegahFramework.Test.Logic/OrderTest.cs" Line="using PegahFramework.Customers;"/>
+			<RemoveLine Path="PegahFramework.Test.Logic/OrderTest.cs" Line="using PegahFramework.Orders;"/>
+			<RemoveLine Path="PegahFramework.Test.Logic/OrderTest.cs" Line="using PegahFramework.Products;"/>
+			<RemoveLine Path="PegahFramework.Test.React/OrderReactTest.cs" Line="using PegahFramework.Customers;"/>
+			<RemoveLine Path="PegahFramework.Test.React/OrderReactTest.cs" Line="using PegahFramework.Orders;"/>
+			<RemoveLine Path="PegahFramework.Test.React/OrderReactTest.cs" Line="using PegahFramework.Products;"/>
+
+			
+			
+			<RemoveLine Path="PegahFramework\MainAdmin.tsx" Line="import { CustomersClient } from &quot;./Customers/CustomersClient&quot;"/>
+			<RemoveLine Path="PegahFramework\MainAdmin.tsx" Line="CustomersClient.start({ routes });"/>
+			<RemoveLine Path="PegahFramework\MainAdmin.tsx" Line="import { EmployeesClient } from &quot;./Employees/EmployeesClient&quot;"/>
+			<RemoveLine Path="PegahFramework\MainAdmin.tsx" Line="EmployeesClient.start({ routes });"/>
+			<RemoveLine Path="PegahFramework\MainAdmin.tsx" Line="import { OrdersClient } from &quot;./Orders/OrdersClient&quot;"/>
+			<RemoveLine Path="PegahFramework\MainAdmin.tsx" Line="OrdersClient.start({ routes });"/>
+			<RemoveLine Path="PegahFramework\MainAdmin.tsx" Line="import { ProductsClient } from &quot;./Products/ProductsClient&quot;"/>
+			<RemoveLine Path="PegahFramework\MainAdmin.tsx" Line="ProductsClient.start({ routes });"/>
+			<RemoveLine Path="PegahFramework\MainAdmin.tsx" Line="import { ShippersClient } from &quot;./Shippers/ShippersClient&quot;"/>
+			<RemoveLine Path="PegahFramework\MainAdmin.tsx" Line="ShippersClient.start({ routes });"/>
+		</Module>
+
+		<Module Name="Migrations">
+			<RemoveLine Path="PegahFramework\Starter.cs" Line="using Signum.Migrations;"/>
+			<RemoveLine Path="PegahFramework\Starter.cs" Line="MigrationLogic.Start(sb);"/>
+			<RemoveLine Path="PegahFramework.Terminal\Program.cs" Line="using Signum.Migrations;"/>
+			<RemoveLine Path="PegahFramework.Terminal\Program.cs" From="if (args.Any())" To="} //if(args.Any())"/>
+			<RemoveLine Path="PegahFramework.Terminal\Program.cs" Line="{&quot;SQL&quot;, SqlMigrationRunner.SqlMigrations},"/>
+			<RemoveLine Path="PegahFramework.Terminal\Program.cs" Line="{&quot;CS&quot;, () => PegahFrameworkMigrations.CSharpMigrations(false), &quot;C# Migrations&quot;},"/>
+			<RemoveLine Path="PegahFramework.Terminal\PegahFrameworkMigrations.cs" From="public static void CSharpMigrations(bool autoRun)" To="} //CSharpMigrations"/>
+			<RemoveLine Path="PegahFramework\PegahFramework.csproj" Line="&lt;ProjectReference Include=&quot;..\Framework\Extensions\Signum.Migrations\Signum.Migrations.csproj&quot; />"/>
+			<RemoveProjectReference Path="Framework\Extensions\Signum.Migrations\Signum.Migrations.csproj"/>
+		</Module>
+
+		<Module Name="LoadNorthwind" DependsOn="ExampleEntities,Migrations">
+			<RemoveLine Path="PegahFramework.Terminal\PegahFrameworkMigrations.cs" From="EmployeeLoader.LoadRegions," To="OrderLoader.SimulateOrderSystemTime,"/>
+			<RemoveFiles Path="PegahFramework.Terminal\CustomerLoader.cs"/>
+			<RemoveFiles Path="PegahFramework.Terminal\EmployeeLoader.cs"/>
+			<RemoveFiles Path="PegahFramework.Terminal\NorthwindSchema.cs"/>
+			<RemoveFiles Path="PegahFramework.Terminal\OrderLoader.cs"/>
+			<RemoveFiles Path="PegahFramework.Terminal\ProductLoader.cs"/>
+			<RemoveFiles Path="PegahFramework.Terminal\SupplierFaxes.csv"/>
+			<RemoveLine Path="PegahFramework.Terminal\appsettings.json" Line="&quot;NorthwindConnectionString&quot;: &quot;Data Source=.\\SQLEXPRESS;Initial Catalog=Northwind;Integrated Security=True;TrustServerCertificate=true&quot;"/>
+		</Module>
+
+		<Module Name="UserQuery">
+			<RemoveLine Path="PegahFramework\Starter.cs" Line="sb.Schema.Settings.FieldAttributes((UserQueryEntity uq) => uq.Owner).Replace(new ImplementedByAttribute(typeof(UserEntity), typeof(RoleEntity)));"/>
+			<RemoveLine Path="PegahFramework\Starter.cs" Line="UserQueryLogic.Start(sb);"/>
+			<RemoveLine Path="PegahFramework\Starter.cs" Line="UserQueryLogic.RegisterUserTypeCondition(sb, PegahFrameworkTypeCondition.UserEntities);"/>
+			<RemoveLine Path="PegahFramework\Starter.cs" Line="UserQueryLogic.RegisterRoleTypeCondition(sb, PegahFrameworkTypeCondition.RoleEntities);"/>
+			<RemoveLine Path="PegahFramework\Starter.cs" Line="UserQueryLogic.RegisterTranslatableRoutes();"/>
+			<RemoveLine Path="PegahFramework\MainAdmin.tsx" Line="import { UserQueryClient } from &quot;@extensions/Signum.UserQueries/UserQueryClient&quot;"/>
+			<RemoveLine Path="PegahFramework\MainAdmin.tsx" Line="UserQueryClient.start({ routes });"/>
+			<RemoveLine Path="PegahFramework\Starter.cs" Line="using Signum.UserQueries;"/>
+			<RemoveLine Path="PegahFramework\PegahFramework.csproj" Line="&lt;ProjectReference Include=&quot;..\Framework\Extensions\Signum.UserQueries\Signum.UserQueries.csproj&quot; />"/>
+			<RemoveProjectReference Path="Framework\Extensions\Signum.UserQueries\Signum.UserQueries.csproj"/>
+		</Module>
+
+		<Module Name="Word">
+			<RemoveLine Path="PegahFramework\Starter.cs" Line="WordTemplateLogic.Start(sb);"/>
+			<RemoveLine Path="PegahFramework\MainAdmin.tsx" Line="import { WordClient } from &quot;@extensions/Signum.Word/WordClient&quot;"/>
+			<RemoveLine Path="PegahFramework\MainAdmin.tsx" Line="WordClient.start({ routes, contextual: true, queryButton: true, entityButton: false });"/>
+			<RemoveLine DependsOn="ExampleEntities,Migrations" Path="PegahFramework.Terminal\PegahFrameworkMigrations.cs" Line="ImportWordReportTemplateForOrder,"/>
+			<RemoveLine DependsOn="ExampleEntities" Path="PegahFramework.Terminal\PegahFrameworkMigrations.cs" From="public static void ImportWordReportTemplateForOrder()" To="}"/>
+			<RemoveFiles DependsOn="ExampleEntities" Path="PegahFramework.Terminal\WordAssets.xml"/>
+			<RemoveFiles DependsOn="ExampleEntities" Path="PegahFramework.Terminal\WordTemplates\Order.docx"/>
+			<RemoveLine Path="PegahFramework\Starter.cs" Line="using Signum.Word;"/>
+			<RemoveLine Path="PegahFramework.Terminal\PegahFrameworkMigrations.cs" Line="using Signum.Word;"/>
+			<RemoveLine Path="PegahFramework\PegahFramework.csproj" Line="&lt;ProjectReference Include=&quot;..\Framework\Extensions\Signum.Word\Signum.Word.csproj&quot; />"/>
+			<RemoveProjectReference Path="Framework\Extensions\Signum.Word\Signum.Word.csproj"/>
+		</Module>
+
+		<Module Name="Chart" DependsOn="Files">
+			<RemoveLine Path="PegahFramework\Starter.cs" Line="using Signum.Chart;"/>
+			<RemoveLine Path="PegahFramework\Starter.cs" Line="using Signum.Chart.UserChart;"/>
+			<RemoveLine Path="PegahFramework\Starter.cs" Line="sb.Schema.Settings.FieldAttributes((UserChartEntity uc) => uc.Owner).Replace(new ImplementedByAttribute(typeof(UserEntity), typeof(RoleEntity)));"/>
+			<RemoveLine Path="PegahFramework\Starter.cs" Line="ChartLogic.Start(sb, googleMapsChartScripts: false /*requires Google Maps API key in ChartClient */);"/>
+			<RemoveLine Path="PegahFramework\Starter.cs" Line="UserChartLogic.RegisterUserTypeCondition(sb, PegahFrameworkTypeCondition.UserEntities);"/>
+			<RemoveLine Path="PegahFramework\Starter.cs" Line="UserChartLogic.RegisterRoleTypeCondition(sb, PegahFrameworkTypeCondition.RoleEntities);"/>
+			<RemoveLine Path="PegahFramework\Starter.cs" Line="UserChartLogic.RegisterTranslatableRoutes();"/>
+			<RemoveLine Path="PegahFramework\MainAdmin.tsx" Line="import { ChartClient } from &quot;@extensions/Signum.Chart/ChartClient&quot;"/>
+			<RemoveLine Path="PegahFramework\MainAdmin.tsx" Line="ChartClient.start({ routes });"/>
+			<RemoveLine Path="PegahFramework\PegahFramework.csproj" Line="&lt;ProjectReference Include=&quot;..\Framework\Extensions\Signum.Chart\Signum.Chart.csproj&quot; />"/>
+			<RemoveProjectReference Path="Framework\Extensions\Signum.Chart\Signum.Chart.csproj"/>
+		</Module>
+
+		<Module Name="Files">
+			<RemoveLine Path="PegahFramework\Starter.cs" Line="using Signum.Files;"/>
+			<RemoveLine Path="PegahFramework.Terminal\PegahFrameworkMigrations.cs" Line="using Signum.Files;"/>
+			<RemoveLine Path="PegahFramework\Starter.cs" Line="using Signum.Files.FileTypeAlgorithms;"/>
+			<RemoveLine Path="PegahFramework\Globals\ApplicationConfigurationEntity.cs" Line="using Signum.Files;"/>
+			<RemoveLine Path="PegahFramework\Starter.cs" Line="MixinDeclarations.Register&lt;BigStringEmbedded, BigStringMixin>();"/>
+			<RemoveLine Path="PegahFramework\Starter.cs" Line="ConfigureBigString(sb);"/>
+			<RemoveLine Path="PegahFramework\Starter.cs" Line="FilePathEmbeddedLogic.Start(sb);"/>
+			<RemoveLine Path="PegahFramework\Starter.cs" Line="FileLogic.Start(sb);"/>
+			<RemoveLine Path="PegahFramework\Starter.cs" Line="BigStringLogic.Start(sb);"/>
+			<RemoveLine Path="PegahFramework\Starter.cs" From="public static void ConfigureBigString(SchemaBuilder sb)" To="}//ConfigureBigString"/>
+			<RemoveLine Path="PegahFramework\MainAdmin.tsx" Line="import { FilesClient } from &quot;@extensions/Signum.Files/FilesClient&quot;"/>
+			<RemoveLine Path="PegahFramework\MainAdmin.tsx" Line="FilesClient.start({ routes });"/>
+			<RemoveLine DependsOn="ExampleEntities" Path="PegahFramework\Employees\EmployeeEntity.cs" Line="public Lite&lt;FileEntity>? Photo { get; set; } //1"/>
+			<RemoveLine DependsOn="ExampleEntities" Path="PegahFramework\Employees\EmployeeEntity.cs" Line="public Lite&lt;FileEntity>? Photo { get; set; } //2"/>
+			<RemoveLine DependsOn="ExampleEntities" Path="PegahFramework\Products\CategoryEntity.cs" Line="public FileEmbedded? Picture { get; set; }"/>
+			<RemoveLine DependsOn="ExampleEntities" Path="PegahFramework.Terminal\EmployeeLoader.cs" Line="Photo = new FileEntity { FileName = e.PhotoPath!.AfterLast('/'), BinaryFile = RemoveOlePrefix(e.Photo!.ToArray()) }.ToLiteFat(),"/>
+			<RemoveLine DependsOn="ExampleEntities" Path="PegahFramework.Terminal\EmployeeLoader.cs" From="public static byte[] RemoveOlePrefix(byte[] bytes)" To="} //RemoveOlePrefix"/>
+			<RemoveLine DependsOn="ExampleEntities" Path="PegahFramework.Terminal\ProductLoader.cs" Line="Picture = new FileEmbedded { FileName = s.CategoryName + &quot;.jpg&quot;, BinaryFile = EmployeeLoader.RemoveOlePrefix(s.Picture!.ToArray()) },"/>
+			<RemoveLine DependsOn="ExampleEntities" Path="PegahFramework\Products\ProductsLogic.cs" Line="s.Picture"/>
+			<RemoveLine DependsOn="ExampleEntities" Path="PegahFramework\Employees\EmployeesLogic.cs" Line="Photo = e.Photo,"/>
+			<RemoveLine DependsOn="ExampleEntities" Path="PegahFramework\Employees\EmployeesLogic.cs" Line="e.Photo, //1"/>
+			<RemoveLine DependsOn="ExampleEntities" Path="PegahFramework\Employees\EmployeesLogic.cs" Line="e.Photo, //2"/>
+			<RemoveLine DependsOn="ExampleEntities" Path="PegahFramework\Employees\EmployeesClient.tsx" From="&lt;FileImage" To="file={lite.model.photo} />"/>
+			<RemoveLine DependsOn="ExampleEntities" Path="PegahFramework\Employees\EmployeesClient.tsx" From="{/*Files*/ }" To="{/*Files*/ }"/>
+			<RemoveLine DependsOn="ExampleEntities" Path="PegahFramework\Products\Category.tsx" Line="const forceUpdate = useForceUpdate();"/>
+			<RemoveLine DependsOn="ExampleEntities" Path="PegahFramework\Products\Category.tsx" Line="const maxDimensions: React.CSSProperties = { maxWidth: &quot;96px&quot;, maxHeight: &quot;96px&quot; };"/>
+			<RemoveLine DependsOn="ExampleEntities" Path="PegahFramework\Products\Category.tsx" Line="&lt;FileLine ctx={ctx.subCtx(c => c.picture)} onChange={() => forceUpdate()} />"/>
+			<RemoveLine DependsOn="ExampleEntities" Path="PegahFramework\Products\Category.tsx" From="&lt;div className=&quot;col-sm-3&quot;>{/*photo*/}" To="&lt;/div>{/*photo*/}"/>
+			<RemoveLine DependsOn="ExampleEntities" Path="PegahFramework\Employees\Employee.tsx" From="{/*photo*/}" To="{/*photo*/}"/>
+
+			<RemoveLine Path="PegahFramework\Globals\ApplicationConfigurationEntity.cs" From="/*Exceptions*/" To="public string ExceptionsFolder { get; set; }"/>
+			<RemoveLine Path="PegahFramework\Globals\ApplicationConfigurationEntity.cs" Line="public static FileTypeSymbol Exceptions;"/>
+			<RemoveLine Path="PegahFramework.Terminal\PegahFrameworkMigrations.cs" Line="ExceptionsFolder = localPrefix + @&quot;exceptions&quot;,"/>
+			<RemoveLine Path="PegahFramework.Test.Environment\PegahFrameworkEnvironment.cs" Line="ExceptionsFolder = localPrefix + @&quot;exceptions&quot;,"/>
+
+			<RemoveLine Path="PegahFramework\Globals\ApplicationConfigurationEntity.cs" From="/*OperationLog*/" To="public string OperationLogFolder { get; set; }"/>
+			<RemoveLine Path="PegahFramework\Globals\ApplicationConfigurationEntity.cs" Line="public static FileTypeSymbol OperationLog;"/>
+			<RemoveLine Path="PegahFramework.Terminal\PegahFrameworkMigrations.cs" Line="OperationLogFolder = localPrefix + @&quot;operation-logs&quot;,"/>
+			<RemoveLine Path="PegahFramework.Test.Environment\PegahFrameworkEnvironment.cs" Line="OperationLogFolder = localPrefix + @&quot;operation-logs&quot;,"/>
+
+			<RemoveLine DependsOn="ViewLog" Path="PegahFramework\Globals\ApplicationConfigurationEntity.cs" From="/*ViewLog*/" To="public string ViewLogFolder { get; set; }"/>
+			<RemoveLine DependsOn="ViewLog" Path="PegahFramework\Globals\ApplicationConfigurationEntity.cs" Line="public static FileTypeSymbol ViewLog;"/>
+			<RemoveLine DependsOn="ViewLog" Path="PegahFramework.Terminal\PegahFrameworkMigrations.cs" Line="ViewLogFolder = localPrefix + @&quot;view-logs&quot;,"/>
+			<RemoveLine DependsOn="ViewLog" Path="PegahFramework.Test.Environment\PegahFrameworkEnvironment.cs" Line="ViewLogFolder = localPrefix + @&quot;view-logs&quot;,"/>
+			<RemoveLine DependsOn="ViewLog" Path="PegahFramework\Starter.cs" Line="FileTypeLogic.Register(BigStringFileType.ViewLog, GetFileTypeAlgorithm(c => c.ViewLogFolder));"/>
+			<RemoveLine DependsOn="ViewLog" Path="PegahFramework\Starter.cs" Line="BigStringLogic.RegisterAll&lt;ViewLogEntity>(sb, new BigStringConfiguration(mode, BigStringFileType.ViewLog));"/>
+
+			<RemoveLine DependsOn="PublicAPI" Path="PegahFramework\Globals\ApplicationConfigurationEntity.cs" From="/*RestLog*/" To="public string RestLogFolder { get; set; }"/>
+			<RemoveLine DependsOn="PublicAPI" Path="PegahFramework\Starter.cs" Line="FileTypeLogic.Register(BigStringFileType.RestLog, GetFileTypeAlgorithm(c => c.RestLogFolder));"/>
+			<RemoveLine DependsOn="PublicAPI" Path="PegahFramework\Starter.cs" Line="BigStringLogic.RegisterAll&lt;RestLogEntity>(sb, new BigStringConfiguration(mode, BigStringFileType.RestLog));"/>
+			<RemoveLine DependsOn="PublicAPI" Path="PegahFramework.Terminal\PegahFrameworkMigrations.cs" Line="RestLogFolder = localPrefix + @&quot;rest-logs&quot;,"/>
+			<RemoveLine DependsOn="PublicAPI" Path="PegahFramework.Test.Environment\PegahFrameworkEnvironment.cs" Line="RestLogFolder = localPrefix + @&quot;rest-logs&quot;,"/>
+
+			<RemoveLine DependsOn="Mailing" Path="PegahFramework\Globals\ApplicationConfigurationEntity.cs" From="/*EmailMessage*/" To="public string EmailMessageFolder { get; set; }"/>
+			<RemoveLine DependsOn="Mailing" Path="PegahFramework\Globals\ApplicationConfigurationEntity.cs" Line="public static FileTypeSymbol EmailMessage;"/>
+			<RemoveLine DependsOn="Mailing" Path="PegahFramework.Terminal\PegahFrameworkMigrations.cs" Line="EmailMessageFolder = localPrefix + @&quot;email-messages&quot;,"/>
+			<RemoveLine DependsOn="Mailing" Path="PegahFramework.Test.Environment\PegahFrameworkEnvironment.cs" Line="EmailMessageFolder = localPrefix + @&quot;email-messages&quot;,"/>
+			<RemoveLine DependsOn="Dashboard" Path="PegahFramework\Starter.cs" Line="FileTypeLogic.Register(BigStringFileType.EmailMessage, GetFileTypeAlgorithm(c => c.EmailMessageFolder));"/>
+			<RemoveLine DependsOn="Dashboard" Path="PegahFramework\Starter.cs" Line="BigStringLogic.RegisterAll&lt;EmailMessageEntity>(sb, new BigStringConfiguration(mode, BigStringFileType.EmailMessage));"/>
+			<RemoveLine Path="PegahFramework\PegahFramework.csproj" Line="&lt;ProjectReference Include=&quot;..\Framework\Extensions\Signum.Files\Signum.Files.csproj&quot; />"/>
+			<RemoveProjectReference Path="Framework\Extensions\Signum.Files\Signum.Files.csproj"/>
+		</Module>
+
+		<Module Name="Excel">
+			<RemoveLine Path="PegahFramework\MainAdmin.tsx" Line="import { ExcelClient } from &quot;@extensions/Signum.Excel/ExcelClient&quot;"/>
+			<RemoveLine Path="PegahFramework\MainAdmin.tsx" Line="ExcelClient.start({ routes, plainExcel: true, importFromExcel: true, excelReport: true });"/>
+			<RemoveLine Path="PegahFramework\Starter.cs" Line="using Signum.Excel;"/>
+			<RemoveLine Path="PegahFramework\PegahFramework.csproj" Line="&lt;ProjectReference Include=&quot;..\Framework\Extensions\Signum.Excel\Signum.Excel.csproj&quot; />"/>
+			<RemoveProjectReference Path="Framework\Extensions\Signum.Excel\Signum.Excel.csproj"/>
+		</Module>
+
+		<Module Name="Dashboard" DependsOn="Chart,UserQuery">
+			<RemoveLine Path="PegahFramework\Starter.cs" Line="sb.Schema.Settings.FieldAttributes((DashboardEntity cp) => cp.Owner).Replace(new ImplementedByAttribute(typeof(UserEntity), typeof(RoleEntity)));"/>
+			<RemoveLine Path="PegahFramework\Starter.cs" Line="DashboardLogic.Start(sb, GetFileTypeAlgorithm(p => p.CachedQueryFolder));"/>
+			<RemoveLine Path="PegahFramework\Starter.cs" Line="DashboardLogic.RegisterUserTypeCondition(sb, PegahFrameworkTypeCondition.UserEntities);"/>
+			<RemoveLine Path="PegahFramework\Starter.cs" Line="DashboardLogic.RegisterRoleTypeCondition(sb, PegahFrameworkTypeCondition.RoleEntities);"/>
+			<RemoveLine Path="PegahFramework\Starter.cs" Line="DashboardLogic.RegisterTranslatableRoutes();"/>
+			<RemoveLine Path="PegahFramework.Terminal\PegahFrameworkMigrations.cs" Line="CachedQueryFolder = localPrefix + @&quot;cached-query&quot;,"/>
+			<RemoveLine Path="PegahFramework.Test.Environment\PegahFrameworkEnvironment.cs" Line="CachedQueryFolder = localPrefix + @&quot;cached-query&quot;,"/>
+			<RemoveLine Path="PegahFramework\Home.tsx" From="if (AuthClient.currentUser()) {" To="else //Dashboard"/>
+			<RemoveLine Path="PegahFramework\MainAdmin.tsx" Line="import { DashboardClient } from &quot;@extensions/Signum.Dashboard/DashboardClient&quot;"/>
+			<RemoveLine Path="PegahFramework\MainAdmin.tsx" Line="DashboardClient.start({ routes });"/>
+			<RemoveLine DependsOn="ExampleEntities" Path="PegahFramework.Terminal\Toolbar.xml" From="&lt;UserChart Guid=&quot;d681b3f5-a3a9-4228-93e9-e856f45d911a&quot; DisplayName=&quot;Evolution By Employee&quot; Query=&quot;Order&quot; HideQuickLink=&quot;false&quot; Owner=&quot;User;2&quot; ChartScript=&quot;D3ChartScript.StackedLines&quot;&gt;"  To="&lt;/Dashboard>"/>
+			<RemoveLine DependsOn="ExampleEntities" Path="PegahFramework.Terminal\Toolbar.xml" Line="&lt;ToolbarElement Type=&quot;Item&quot; IconName=&quot;fas fa-tachometer-alt&quot; IconColor=&quot;blue&quot; Content=&quot;7914fa80-dfd6-42a2-b29a-18e8cc5851f8&quot; />" />
+			<RemoveLine Path="PegahFramework\Starter.cs" Line="using Signum.Dashboard;"/>
+			<RemoveLine Path="PegahFramework.Terminal\PegahFrameworkMigrations.cs" Line="using Signum.Dashboard;"/>
+			<RemoveLine Path="PegahFramework\PegahFramework.csproj" Line="&lt;ProjectReference Include=&quot;..\Framework\Extensions\Signum.Dashboard\Signum.Dashboard.csproj&quot; />"/>
+			<RemoveProjectReference Path="Framework\Extensions\Signum.Dashboard\Signum.Dashboard.csproj"/>
+		</Module>
+
+		<Module Name="ViewLog">
+
+			<RemoveLine Path="PegahFramework\Starter.cs" Line="ViewLogLogic.Start(sb, new HashSet&lt;Type> { typeof(UserQueryEntity), typeof(UserChartEntity), typeof(DashboardEntity) });"/>
+			<RemoveLine Path="PegahFramework.Terminal\Toolbar.xml" Line="&lt;ToolbarElement Type=&quot;Item&quot; Content=&quot;ViewLog&quot; />" />
+			<RemoveLine Path="PegahFramework\Starter.cs" Line="using Signum.ViewLog;"/>
+			<RemoveLine Path="PegahFramework\Starter.cs" Line="sb.Schema.Settings.FieldAttributes((ViewLogEntity cp) => cp.User).Replace(new ImplementedByAttribute(typeof(UserEntity)));"/>
+			<RemoveLine Path="PegahFramework\PegahFramework.csproj" Line="&lt;ProjectReference Include=&quot;..\Framework\Extensions\Signum.ViewLog\Signum.ViewLog.csproj&quot; />"/>
+		</Module>
+
+		<Module Name="Toolbar">
+			<RemoveLine Path="PegahFramework\Starter.cs" Line="ToolbarLogic.Start(sb);"/>
+			<RemoveLine Path="PegahFramework\Starter.cs" Line="ToolbarLogic.RegisterTranslatableRoutes();"/>
+			<RemoveLine Path="PegahFramework\MainAdmin.tsx" Line="import { ToolbarClient } from &quot;@extensions/Signum.Toolbar/ToolbarClient&quot;"/>
+			<RemoveLine Path="PegahFramework\MainAdmin.tsx" Line="ToolbarClient.start({ routes });"/>
+			<RemoveLine Path="PegahFramework\Layout.tsx" Line="const ToolbarRenderer = React.lazy(() => import(&quot;@extensions/Signum.Toolbar/Renderers/ToolbarRenderer&quot;));"/>
+			<RemoveLine Path="PegahFramework\Layout.tsx" From="hasUser ? &lt;React.Suspense fallback={JavascriptMessage.loading.niceToString()}>"
+						To="&lt;/React.Suspense> :"/>
+			<RemoveLine DependsOn="ExampleEntities" Path="PegahFramework.Terminal\Toolbar.xml" From="&lt;UserQuery Guid=&quot;37ae5c35-8d2b-41f7-acbf-5ef93c91c8ca&quot; DisplayName=&quot;Employees&quot; Query=&quot;Employee&quot; ColumnsMode=&quot;ReplaceAll&quot;&gt;" To="&lt;/UserQuery>" />
+			<RemoveLine DependsOn="ExampleEntities" Path="PegahFramework.Terminal\Toolbar.xml" From="&lt;ToolbarMenu Guid=&quot;fd577065-f887-4567-8da3-9d5bcc1cedfd&quot; Name=&quot;Products&quot;>" To="&lt;/ToolbarMenu>" />
+			<RemoveLine DependsOn="ExampleEntities" Path="PegahFramework.Terminal\Toolbar.xml" From="&lt;ToolbarMenu Guid=&quot;8b7e4ac5-cf45-41cb-8cff-4ce04506e12f&quot; Name=&quot;Employee&quot;>" To="&lt;/ToolbarMenu>" />
+			<RemoveLine DependsOn="ExampleEntities" Path="PegahFramework.Terminal\Toolbar.xml" From="&lt;ToolbarElement Type=&quot;Item&quot; IconName=&quot;fas fa-shopping-cart&quot; IconColor=&quot;orange&quot; Content=&quot;Order&quot; />"
+						To="&lt;ToolbarElement Type=&quot;Item&quot; IconName=&quot;fas fa-user&quot; IconColor=&quot;seagreen&quot; Content=&quot;8b7e4ac5-cf45-41cb-8cff-4ce04506e12f&quot; />" />
+			<RemoveLine DependsOn="Dynamic" Path="PegahFramework.Terminal\Toolbar.xml" Line="&lt;ToolbarElement Type=&quot;Item&quot; Label=&quot;Dynamic Panel&quot; IconName=&quot;fas fa-arrows-alt&quot; IconColor=&quot;#9b6bcc&quot; Content=&quot;EvalPanelPermission.ViewDynamicPanel&quot; Url=&quot;~/dynamic/panel&quot; />" />
+			<RemoveLine DependsOn="Workflow" Path="PegahFramework.Terminal\Toolbar.xml" Line="&lt;ToolbarElement Type=&quot;Item&quot; Label=&quot;Workflow Script Runner&quot; IconName=&quot;fas fa-random&quot; IconColor=&quot;#9b6bcc&quot; Content=&quot;WorkflowPermission.ViewWorkflowPanel&quot; Url=&quot;~/workflow/panel&quot; />" />
+			<RemoveLine DependsOn="Workflow" Path="PegahFramework.Terminal\Toolbar.xml" Line="&lt;ToolbarElement Type=&quot;Item&quot; Content=&quot;WorkflowPermission.WorkflowToolbarMenu&quot; />" />
+			<RemoveLine DependsOn="Workflow" Path="PegahFramework.Terminal\Toolbar.xml" From="&lt;ToolbarMenu Guid=&quot;b9423939-ec3d-4495-9361-a335390d93a6&quot; Name=&quot;Workflow&quot;>" To="&lt;/ToolbarMenu>" />
+			<RemoveLine DependsOn="Workflow" Path="PegahFramework.Terminal\Toolbar.xml" Line="&lt;ToolbarElement Type=&quot;Item&quot; IconName=&quot;fas fa-random&quot; IconColor=&quot;saddlebrown&quot; Content=&quot;b9423939-ec3d-4495-9361-a335390d93a6&quot; />" />
+			<RemoveLine Path="PegahFramework.Terminal\Toolbar.xml" From="&lt;ToolbarMenu Guid=&quot;2deb71ea-f065-4fe3-9215-90460bc2d5ec&quot; Name=&quot;Reports&quot;>" To="&lt;/Toolbar>" />
+			<RemoveLine Path="PegahFramework.Terminal\PegahFrameworkMigrations.cs" Line="using Signum.Toolbar;"/>
+			<RemoveLine Path="PegahFramework\Starter.cs" Line="using Signum.Toolbar;"/>
+			<RemoveLine Path="PegahFramework\PegahFramework.csproj" Line="&lt;ProjectReference Include=&quot;..\Framework\Extensions\Signum.Toolbar\Signum.Toolbar.csproj&quot; />"/>
+			<RemoveProjectReference Path="Framework\Extensions\Signum.Toolbar\Signum.Toolbar.csproj"/>
+		</Module>
+
+		<Module Name="Process">
+			<RemoveLine Path="PegahFramework\Starter.cs" Line="using Signum.Processes;"/>
+			<RemoveLine Path="PegahFramework.Server\Program.cs" Line="using Signum.Processes;"/>
+			<RemoveLine Path="PegahFramework\Orders\OrderEntity.cs" Line="public static ConstructSymbol&lt;ProcessEntity&gt;.FromMany&lt;OrderEntity&gt; CancelWithProcess;"/>
+			<RemoveLine Path="PegahFramework\Orders\OrderEntity.cs" From="[AutoInit]//OrderProcess" To="}"/>
+			<RemoveLine Path="PegahFramework\Orders\OrdersLogic.cs" Line="ProcessLogic.Register(OrderProcess.CancelOrders, new CancelOrderAlgorithm());"/>
+			<RemoveLine Path="PegahFramework\Orders\OrdersLogic.cs" From="public class CancelOrderAlgorithm : PackageExecuteAlgorithm&lt;OrderEntity&gt;" To="} //CancelOrderAlgorithm"/>
+			<RemoveLine Path="PegahFramework\Orders\OrdersLogic.cs" From="new Graph&lt;ProcessEntity&gt;.ConstructFromMany&lt;OrderEntity&gt;(OrderOperation.CancelWithProcess)" To="}.Register();"/>
+			<RemoveLine Path="PegahFramework\Starter.cs"
+						From="sb.Schema.Settings.FieldAttributes((PackageLineEntity cp) => cp.Package).Replace(new ImplementedByAttribute(typeof(PackageEntity), typeof(PackageOperationEntity)));"
+						To="sb.Schema.Settings.FieldAttributes((ProcessEntity s) => s.User).Replace(new ImplementedByAttribute(typeof(UserEntity)));"/>
+			<RemoveLine Path="PegahFramework\Starter.cs" From="ProcessLogic.Start(sb);"
+						To="PackageLogic.Start(sb, packages: true, packageOperations: true);"/>
+			<RemoveLine Path="PegahFramework\MainAdmin.tsx" Line="import { ProcessClient } from &quot;@extensions/Signum.Processes/ProcessClient&quot;"/>
+			<RemoveLine Path="PegahFramework\MainAdmin.tsx" Line="ProcessClient.start({ routes, packages: true, packageOperations: true });"/>
+			<RemoveLine Path="PegahFramework.Server\Program.cs" Line="ProcessRunner.StartRunningProcessesAfter(5 * 1000);"/>
+			<RemoveLine Path="PegahFramework\PegahFramework.csproj" Line="&lt;ProjectReference Include=&quot;..\Framework\Extensions\Signum.Processes\Signum.Processes.csproj&quot; />"/>
+			<RemoveProjectReference Path="Framework\Extensions\Signum.Processes\Signum.Processes.csproj"/>
+		</Module>
+
+		<Module Name="Scheduler" DependsOn="Process">
+			<RemoveLine Path="PegahFramework.Server\Program.cs" Line="using Signum.Scheduler;"/>
+			<RemoveLine Path="PegahFramework\Starter.cs" Line="using Signum.Scheduler;"/>
+			<RemoveLine Path="PegahFramework\Orders\OrderEntity.cs" From="[AutoInit]//OrderTask" To="}"/>
+			<RemoveLine Path="PegahFramework\Orders\OrdersLogic.cs" From="SimpleTaskLogic.Register(OrderTask.CancelOldOrdersWithProcess, ctx =>" To="});//CancelOldOrdersProcess"/>
+
+			<RemoveLine Path="PegahFramework\Starter.cs"
+						From="sb.Schema.Settings.FieldAttributes((ScheduledTaskEntity a) => a.User).Replace(new ImplementedByAttribute(typeof(UserEntity)));"
+						To="sb.Schema.Settings.FieldAttributes((ScheduledTaskLogEntity a) => a.User).Replace(new ImplementedByAttribute(typeof(UserEntity)));"/>
+			<RemoveLine Path="PegahFramework\Starter.cs" Line="SchedulerLogic.Start(sb);"/>
+			<RemoveLine Path="PegahFramework.Server\Program.cs" Line="ScheduleTaskRunner.StartScheduledTaskAfter(5 * 1000);"/>
+			<RemoveLine Path="PegahFramework\MainAdmin.tsx" Line="import { SchedulerClient } from &quot;@extensions/Signum.Scheduler/SchedulerClient&quot;"/>
+			<RemoveLine Path="PegahFramework\MainAdmin.tsx" Line="SchedulerClient.start({ routes });"/>
+			<RemoveLine Path="PegahFramework\PegahFramework.csproj" Line="&lt;ProjectReference Include=&quot;..\Framework\Extensions\Signum.Scheduler\Signum.Scheduler.csproj&quot; />"/>
+			<RemoveProjectReference Path="Framework\Extensions\Signum.Scheduler\Signum.Scheduler.csproj"/>
+		</Module>
+
+		<Module Name="Mailing">
+
+			<RemoveLine Path="PegahFramework.Test.Environment\PegahFrameworkEnvironment.cs" Line="using Signum.Mailing;"/>
+			<RemoveLine Path="PegahFramework\Starter.cs" Line="using Signum.Mailing;"/>
+			<RemoveLine Path="PegahFramework\Starter.cs" Line="using Signum.Mailing.Package;"/>
+			<RemoveLine Path="PegahFramework\Starter.cs" Line="using Signum.Mailing.MicrosoftGraph;"/>
+			<RemoveLine Path="PegahFramework.Server\Program.cs" Line="using Signum.Mailing;"/>
+			<RemoveLine Path="PegahFramework.Terminal\PegahFrameworkMigrations.cs" Line="using Signum.Mailing;"/>
+			<RemoveLine Path="PegahFramework\Globals\ApplicationConfigurationEntity.cs" Line="using Signum.Mailing;"/>
+			<RemoveLine Path="PegahFramework\Starter.cs" Line="using Signum.Eval;"/>
+			<RemoveLine Path="PegahFramework\Starter.cs" Line="sb.Schema.Settings.FieldAttributes((EmailMessageEntity em) => em.From.EmailOwner).Replace(new ImplementedByAttribute(typeof(UserEntity)));"/>
+			<RemoveLine Path="PegahFramework\Starter.cs" Line="sb.Schema.Settings.FieldAttributes((EmailMessageEntity em) => em.Recipients.First().EmailOwner).Replace(new ImplementedByAttribute(typeof(UserEntity)));"/>
+			<RemoveLine Path="PegahFramework\Starter.cs" Line="sb.Schema.Settings.FieldAttributes((EmailSenderConfigurationEntity em) => em.DefaultFrom!.EmailOwner).Replace(new ImplementedByAttribute(typeof(UserEntity)));"/>
+			<RemoveLine Path="PegahFramework\Starter.cs" Line="sb.Schema.Settings.FieldAttributes((EmailSenderConfigurationEntity em) => em.AdditionalRecipients.First().EmailOwner).Replace(new ImplementedByAttribute(typeof(UserEntity)));"/>
+			<RemoveLine Path="PegahFramework\Starter.cs" Line="sb.Schema.Settings.FieldAttributes((EmailSenderConfigurationEntity em) => em.Service).Replace(new ImplementedByAttribute(typeof(SmtpEmailServiceEntity), typeof(MicrosoftGraphEmailServiceEntity)));" DependsOn="AzureAD" />
+			<RemoveLine Path="PegahFramework\Starter.cs" Line="EmailLogic.Start(sb, () => Configuration.Value.Email, (template, target, message) => Configuration.Value.EmailSender);"/>
+			<RemoveLine Path="PegahFramework\Starter.cs" Line="MailingMicrosoftGraphLogic.Start(sb);" DependsOn="AzureAD"  />
+			<RemoveLine Path="PegahFramework\Globals\GlobalsLogic.cs" From="s.Email.SendEmails," To="s.Email.UrlLeft"/>
+			<RemoveLine Path="PegahFramework.Server\Program.cs" Line="AsyncEmailSender.StartAsyncEmailSenderAfter(5 * 1000);" />
+			<RemoveLine Path="PegahFramework\MainAdmin.tsx" Line="import { MailingClient } from &quot;@extensions/Signum.Mailing/MailingClient&quot;"/>
+			<RemoveLine Path="PegahFramework\MainAdmin.tsx" Line="MailingClient.start({ routes, contextual: true, queryButton: true });"/>
+			<RemoveLine Path="PegahFramework\Globals\ApplicationConfigurationEntity.cs" From="/*Email*/" To="public EmailSenderConfigurationEntity EmailSender { get; set; }"/>
+			<RemoveLine Path="PegahFramework\Globals\ApplicationConfiguration.tsx" From="&lt;Tab eventKey=&quot;tab&quot; title={ctx.niceName(a => a.email)}>" To="&lt;/Tab>"/>
+			<RemoveLine Path="PegahFramework.Terminal\PegahFrameworkMigrations.cs" From="Email = new EmailConfigurationEmbedded" To="}, //Email"/>
+			<RemoveLine Path="PegahFramework\PegahFramework.csproj" Line="&lt;ProjectReference Include=&quot;..\Framework\Extensions\Signum.Mailing\Signum.Mailing.csproj&quot; />"/>
+			<RemoveProjectReference Path="Framework\Extensions\Signum.Mailing\Signum.Mailing.csproj"/>
+		</Module>
+
+		<Module Name="SMS">
+			<RemoveLine Path="PegahFramework.Test.Environment\PegahFrameworkEnvironment.cs" Line="using Signum.SMS;"/>
+			<RemoveLine Path="PegahFramework\Starter.cs" Line="using Signum.SMS;"/>
+			<RemoveLine Path="PegahFramework.Terminal\PegahFrameworkMigrations.cs" Line="using Signum.SMS;"/>
+			<RemoveLine Path="PegahFramework\Globals\ApplicationConfigurationEntity.cs" Line="using Signum.SMS;"/>
+			<RemoveLine Path="PegahFramework\Starter.cs" Line="SMSLogic.Start(sb, null, () => Configuration.Value.Sms);" />
+			<RemoveLine Path="PegahFramework\Globals\ApplicationConfigurationEntity.cs" From="/*Sms*/" To="public SMSConfigurationEmbedded Sms { get; set; }"/>
+			<RemoveLine Path="PegahFramework\Globals\ApplicationConfiguration.tsx" From="&lt;Tab eventKey=&quot;sms&quot; title={ctx.niceName(a => a.sms)}>" To="&lt;/Tab>"/>
+			<RemoveLine Path="PegahFramework.Terminal\PegahFrameworkMigrations.cs" From="Sms = new SMSConfigurationEmbedded" To="}, //Sms"/>
+			<RemoveLine Path="PegahFramework.Test.Environment\PegahFrameworkEnvironment.cs" From="Sms = new SMSConfigurationEmbedded" To="}, //Sms"/>
+			<RemoveLine Path="PegahFramework\PegahFramework.csproj" Line="&lt;ProjectReference Include=&quot;..\Framework\Extensions\Signum.SMS\Signum.SMS.csproj&quot; />"/>
+			<RemoveProjectReference Path="Framework\Extensions\Signum.SMS\Signum.SMS.csproj"/>
+		</Module>
+
+		<Module Name="Auth">
+			<RemoveLine Path="PegahFramework\Globals\ApplicationConfigurationEntity.cs" Line="using Signum.Authorization.Rules;"/>
+			<RemoveLine Path="PegahFramework\Globals\ApplicationConfigurationEntity.cs" Line="using Signum.Authorization.AuthToken;"/>
+			<RemoveLine Path="PegahFramework\Starter.cs" Line="AuthLogic.Start(sb, &quot;System&quot;,  &quot;Anonymous&quot;); /* null); anonymous*/"/>
+			<RemoveSpanInLines Path="PegahFramework\Starter.cs" Span="&quot;Anonymous&quot;); /*" DependsOn="PublicCatalog"/>
+			<RemoveLine Path="PegahFramework.Test.Environment\PegahFrameworkEnvironment.cs" Line="CreateUser(&quot;Anonymous&quot;, roles.GetOrThrow(&quot;Anonymous&quot;));" DependsOn="PublicCatalog"/>
+			<RemoveSpanInLines Path="PegahFramework\Products\CategoryEntity.cs" Span=", AllowUnathenticated" DependsOn="PublicCatalog"/>
+			<RemoveSpanInLines Path="PegahFramework\Starter.cs" Span="anonymous*/" DependsOn="PublicCatalog"/>
+			<RemoveLine Path="PegahFramework.Terminal\PegahFrameworkMigrations.cs" Line="AuthLogic.LoadRoles();"/>
+			<RemoveLine Path="PegahFramework.Terminal\PegahFrameworkMigrations.cs" From="UserEntity anonymous = new UserEntity" To="}.Save(); //Anonymous"/>
+			<RemoveLine Path="PegahFramework\Starter.cs" Line="AuthLogic.StartAllModules(sb, () => Starter.Configuration.Value.AuthTokens);"/>
+			<RemoveSpanInLines Path="PegahFramework\Starter.cs" Span="typeof(UserEntity),"/>
+			<RemoveSpanInLines Path="PegahFramework\Starter.cs" Span="typeof(UserEntity)"/>
+			<RemoveSpanInLines Path="PegahFramework\Starter.cs" Span="typeof(RoleEntity)"/>
+			<RemoveLine Path="PegahFramework\Globals\ApplicationConfigurationEntity.cs" From="/*Auth*/" To="public AuthTokenConfigurationEmbedded AuthTokens { get; set; }"/>
+			<RemoveLine Path="PegahFramework\Globals\ApplicationConfiguration.tsx" From="&lt;Tab eventKey=&quot;auth&quot; title={ctx.niceName(a => a.authTokens)}>" To="&lt;/Tab>"/>
+			<RemoveLine Path="PegahFramework.Terminal\PegahFrameworkMigrations.cs" From="AuthTokens = new AuthTokenConfigurationEmbedded" To="}, //Auth"/>
+			<RemoveLine Path="PegahFramework.Server\Program.cs" Line="AuthTokenEncryptionKey = app.Configuration.GetValue&lt;string>(&quot;AuthTokenEncryptionKey&quot;)!," />
+			<RemoveLine Path="PegahFramework.Terminal\Program.cs" Line="{&quot;AR&quot;, AuthLogic.ImportExportAuthRules},"/>
+			<RemoveLine Path="PegahFramework.Terminal\PegahFrameworkMigrations.cs" Line="EmployeeLoader.CreateUsers," DependsOn="Migrations,LoadNorthwind"/>
+			<RemoveLine Path="PegahFramework.Terminal\PegahFrameworkMigrations.cs" From="CreateRoles," To="CreateSystemUser,"/>
+			<RemoveLine Path="PegahFramework.Terminal\EmployeeLoader.cs" From="internal static void CreateUsers()" To="} //CreateUsers"/>
+			<RemoveLine Path="PegahFramework.Terminal\PegahFrameworkMigrations.cs" From="internal static void CreateRoles()" To="} //CreateSystemUser"/>
+			<RemoveFiles Path="PegahFramework\Globals\UserEmployeeMixin.cs" DependsOn="ExampleEntities"/>
+			<RemoveLine Path="PegahFramework\Starter.cs" Line="MixinDeclarations.Register&lt;UserEntity, UserEmployeeMixin&gt;();" DependsOn="ExampleEntities"/>
+			<RemoveSpanInLines Path="PegahFramework\Globals\GlobalsClient.tsx" Span=", UserEmployeeMixin" DependsOn="ExampleEntities"/>
+			<RemoveLine Path="PegahFramework\Globals\GlobalsClient.tsx"
+					   From="Navigator.getSettings(UserEntity)!.overrideView((rep) => {"
+					   To="});"
+					   DependsOn="ExampleEntities"/>
+			<RemoveSpanInLines Path="PegahFramework\Employees\EmployeeEntity.cs" Span="get { return (Lite&lt;EmployeeEntity>?)UserHolder.Current?.GetClaim(&quot;Employee&quot;); } //" DependsOn="ExampleEntities" />>
+			<RemoveLine Path="PegahFramework\Layout.tsx" Line="const hasUser = Boolean(AuthClient.currentUser());" />
+			<RemoveSpanInLines Path="PegahFramework\Layout.tsx" Span="hasUser &amp;&amp;" />
+			<RemoveLine Path="PegahFramework\Layout.tsx" From="&lt;LoginDropdown" To="/>{/*LoginDropdown*/}"/>
+			<RemoveLine Path="PegahFramework\MainAdmin.tsx" Line="import { AuthAdminClient } from &quot;@extensions/Signum.Authorization/AuthAdminClient&quot;"/>
+			<RemoveSpanInLines Path="PegahFramework\MainPublic.tsx" Span="await AuthClient.autoLogin();"/>
+			<RemoveSpanInLines Path="PegahFramework\MainPublic.tsx" Span="Boolean(AuthClient.currentUser()) &amp;&amp; AuthClient.currentUser().userName != &quot;Anonymous&quot;; //"/>
+			<RemoveSpanInLines Path="PegahFramework\MainPublic.tsx" Span=" &amp;&amp; AuthClient.currentUser().userName != &quot;Anonymous&quot;" DependsOn="PublicCatalog"/>
+			<RemoveLine Path="PegahFramework\MainPublic.tsx" Line="AuthClient.startPublic({ routes, userTicket: true, notifyLogout: true });"/>
+			<RemoveLine Path="PegahFramework\MainPublic.tsx" From="AuthClient.Options.onLogin = (url?: string) => {" To="};"/>
+			<RemoveLine Path="PegahFramework\MainPublic.tsx" From="AuthClient.Options.onLogout = () => {" To="};"/>
+			<RemoveLine Path="PegahFramework\MainAdmin.tsx" Line="AuthAdminClient.start({ routes, types: true, properties: true, operations: true, queries: true, permissions: true });"/>
+			<RemoveLine Path="PegahFramework.Test.Environment\PegahFrameworkEnvironment.cs" From="internal static void LoadUsers()" To="}//LoadUsers"/>
+			<RemoveLine Path="PegahFramework.Test.Environment\PegahFrameworkEnvironment.cs" Line="user.SetMixin((UserEmployeeMixin e) => e.Employee, Database.Query&lt;EmployeeEntity>().SingleOrDefaultEx(e => e.FirstName == userName)?.ToLite());" DependsOn="ExampleEntities"/>
+			<RemoveLine Path="PegahFramework.Test.Environment\EnvironmentTest.cs" Line="PegahFrameworkEnvironment.LoadUsers();"/>
+			<RemoveLine Path="PegahFramework.Test.Environment\EnvironmentTest.cs" Line="var authRules = XDocument.Load(@&quot;..\..\..\..\PegahFramework.Terminal\AuthRules.xml&quot;);"/>
+			<RemoveLine Path="PegahFramework.Test.Environment\EnvironmentTest.cs" Line="AuthLogic.LoadRoles(authRules);"/>
+			<RemoveLine Path="PegahFramework.Test.Environment\EnvironmentTest.cs" Line="AuthLogic.ImportRulesScript(authRules, interactive: false)!.PlainSqlCommand().ExecuteLeaves();"/>
+			<RemoveLine Path="PegahFramework\Starter.cs" Line="using Signum.Authorization;"/>
+			<RemoveLine Path="PegahFramework.Test.Environment\PegahFrameworkEnvironment.cs" Line="using Signum.Authorization;"/>
+			<RemoveLine Path="PegahFramework.Terminal\PegahFrameworkMigrations.cs" Line="using Signum.Authorization;"/>
+			<RemoveLine Path="PegahFramework\Starter.cs" Line="using Signum.Authorization.Rules;"/>
+
+			<RemoveLine Path="PegahFramework\PegahFramework.csproj" Line="&lt;ProjectReference Include=&quot;..\Framework\Extensions\Signum.Authorization\Signum.Authorization.csproj&quot; />"/>
+			<RemoveProjectReference Path="Framework\Extensions\Signum.Authorization\Signum.Authorization.csproj"/>
+		</Module>
+
+		<Module Name="AzureAD" DependsOn="Auth">
+			<RemoveLine Path="PegahFramework\Starter.cs" Line="using Signum.Authorization.ActiveDirectory;"/>
+			<RemoveLine Path="PegahFramework\Globals\ApplicationConfigurationEntity.cs" Line="using Signum.Authorization.ActiveDirectory;"/>
+			<RemoveFiles Path="PegahFramework\PegahFrameworkAuthorizer.cs" />
+			<RemoveLine Path="PegahFramework\Starter.cs" Line="using Signum.Authorization.ActiveDirectory.Azure;"/>
+			<RemoveLine Path="PegahFramework\Starter.cs" Line="AuthLogic.Authorizer = new PegahFrameworkAuthorizer(() => Configuration.Value.ActiveDirectory);"/>
+			<RemoveLine Path="PegahFramework\Starter.cs" Line="AzureADLogic.Start(sb, adGroupsAndQueries: true, deactivateUsersTask: true);"/>
+			<RemoveLine Path="PegahFramework\Starter.cs" Line="MixinDeclarations.Register&lt;UserEntity, UserADMixin&gt;();"/>
+			<RemoveLine Path="PegahFramework\Starter.cs" Line="sb.Schema.Settings.ImplementedByAllPrimaryKeyTypes.Add(typeof(Guid)); //because AzureAD" />
+			<RemoveLine Path="PegahFramework\Layout.tsx" Line="changePasswordVisible={AuthClient.getAuthenticationType() != &quot;azureAD&quot;}"/>
+			<RemoveLine Path="PegahFramework\Globals\ApplicationConfigurationEntity.cs" Line="public ActiveDirectoryConfigurationEmbedded ActiveDirectory { get; set; }"/>
+			<RemoveLine Path="PegahFramework\MainAdmin.tsx" Line="import { ActiveDirectoryClient } from &quot;@extensions/Signum.Authorization.ActiveDirectory/ActiveDirectoryClient&quot;"/>
+			<RemoveLine Path="PegahFramework\MainAdmin.tsx" Line="ActiveDirectoryClient.start({ routes, adGroups: false, cachedProfilePhoto: false });"/>
+			<RemoveLine Path="PegahFramework\MainPublic.tsx" Line="import { AzureADClient } from '@extensions/Signum.Authorization.ActiveDirectory/Azure/AzureADClient'"/>
+			<RemoveLine Path="PegahFramework\MainPublic.tsx" From="if (window.__azureApplicationId) {" To="}//__azureApplicationId"/>
+			<RemoveLine Path="PegahFramework\Index.cshtml"
+						From="var __azureApplicationId = @Json.Serialize(Starter.Configuration.Value.ActiveDirectory.Azure_ApplicationID);"
+						To="var __azureTenantId = @Json.Serialize(Starter.Configuration.Value.ActiveDirectory.Azure_DirectoryID);"/>
+			<RemoveLine Path="PegahFramework.Terminal/PegahFrameworkMigrations.cs" Line="var standardUser = Database.Query&lt;RoleEntity&gt;().Single(a => a.Name == &quot;Standard user&quot;).ToLite();" />
+			<RemoveLine Path="PegahFramework.Test.Environment/PegahFrameworkEnvironment.cs" Line="var standardUser = Database.Query&lt;RoleEntity&gt;().Single(a => a.Name == &quot;Standard user&quot;).ToLite();" />
+			<RemoveLine Path="PegahFramework.Terminal/PegahFrameworkMigrations.cs" From="ActiveDirectory = new ActiveDirectoryConfigurationEmbedded" To="}, //ActiveDirectory" />
+			<RemoveLine Path="PegahFramework.Test.Environment/PegahFrameworkEnvironment.cs" From="ActiveDirectory = new ActiveDirectoryConfigurationEmbedded" To="}, //ActiveDirectory" />
+			<RemoveLine Path="PegahFramework\PegahFramework.csproj" Line="&lt;ProjectReference Include=&quot;..\Framework\Extensions\Signum.Authorization.ActiveDirectory\Signum.Authorization.ActiveDirectory.csproj&quot; />"/>
+			<RemoveProjectReference Path="Framework\Extensions\Signum.Authorization.ActiveDirectory\Signum.Authorization.ActiveDirectory.csproj"/>
+		</Module>
+
+		<Module Name="Translation">
+			<RemoveLine Path="PegahFramework\Starter.cs" Line="using Signum.Translation;"/>
+			<RemoveLine Path="PegahFramework\Starter.cs" Line="using Signum.Translation.Translators;"/>
+			<RemoveLine Path="PegahFramework\Starter.cs" Line="using Signum.Translation.Instances;"/>
+			<RemoveLine Path="PegahFramework\Starter.cs" From="TranslationLogic.Start(sb, countLocalizationHits: false," To="TranslatedInstanceLogic.Start(sb, () => CultureInfo.GetCultureInfo(&quot;en&quot;));"/>
+			<RemoveFiles Path="PegahFramework\Translations" DependsOn="ExampleEntities" />
+			<RemoveLine Path="PegahFramework\MainAdmin.tsx" Line="import { TranslationClient } from &quot;@extensions/Signum.Translation/TranslationClient&quot;"/>
+			<RemoveLine Path="PegahFramework\MainAdmin.tsx" Line="import { TranslatedInstanceClient } from &quot;@extensions/Signum.Translation/TranslatedInstanceClient&quot;"/>
+			<RemoveLine Path="PegahFramework\MainAdmin.tsx" Line="TranslationClient.start({ routes });"/>
+			<RemoveLine Path="PegahFramework\MainAdmin.tsx" Line="TranslatedInstanceClient.start({ routes });"/>
+			<RemoveLine Path="PegahFramework\MainPublic.tsx" Line="import { CultureClient } from &quot;@framework/Basics/CultureClient&quot;"/>
+			<RemoveLine Path="PegahFramework\MainPublic.tsx" Line="await CultureClient.loadCurrentCulture();"/>
+			<RemoveLine Path="PegahFramework\MainPublic.tsx" Line="CultureClient.onCultureLoaded.push(ci => {"/>
+			<RemoveLine Path="PegahFramework\MainPublic.tsx" Line="}); //Culture"/>
+			<RemoveLine Path="PegahFramework.Terminal\Program.cs" Line="{&quot;CT&quot;, TranslationLogic.CopyTranslations},"/>
+			<RemoveSpanInLines Path="PegahFramework\MainPublic.tsx" Span="ci.name!; //"/>
+			<RemoveLine Path="PegahFramework.Terminal\PegahFrameworkMigrations.cs" Line="ImportInstanceTranslations," DependsOn="LoadNorthwind,Migrations"/>
+			<RemoveLine Path="PegahFramework.Terminal\PegahFrameworkMigrations.cs" From="public static void ImportInstanceTranslations()" To="}//ImportInstanceTranslations" DependsOn="LoadNorthwind"/>
+			<RemoveFiles Path="PegahFramework.Terminal\InstanceTranslations\Category.es.View.xlsx" DependsOn="LoadNorthwind"/>
+			<RemoveFiles Path="PegahFramework.Terminal\InstanceTranslations\Dashboard.es.View.xlsx" DependsOn="LoadNorthwind,Dashboard"/>
+			<RemoveFiles Path="PegahFramework.Terminal\InstanceTranslations\UserQuery.es.View.xlsx" DependsOn="LoadNorthwind,UserQuery"/>
+			<RemoveFiles Path="PegahFramework.Terminal\InstanceTranslations\UserChart.es.View.xlsx" DependsOn="LoadNorthwind,Chart"/>
+			<RemoveFiles Path="PegahFramework.Terminal\InstanceTranslations\Toolbar.es.View.xlsx" DependsOn="LoadNorthwind,Toolbar"/>
+			<RemoveFiles Path="PegahFramework.Terminal\InstanceTranslations\ToolbarMenu.es.View.xlsx" DependsOn="LoadNorthwind,Toolbar"/>
+			<RemoveFiles Path="PegahFramework.Terminal\InstanceTranslations\Category.de.View.xlsx" DependsOn="LoadNorthwind"/>
+			<RemoveFiles Path="PegahFramework.Terminal\InstanceTranslations\Dashboard.de.View.xlsx" DependsOn="LoadNorthwind,Dashboard"/>
+			<RemoveFiles Path="PegahFramework.Terminal\InstanceTranslations\UserQuery.de.View.xlsx" DependsOn="LoadNorthwind,UserQuery"/>
+			<RemoveFiles Path="PegahFramework.Terminal\InstanceTranslations\UserChart.de.View.xlsx" DependsOn="LoadNorthwind,Chart"/>
+			<RemoveFiles Path="PegahFramework.Terminal\InstanceTranslations\Toolbar.de.View.xlsx" DependsOn="LoadNorthwind,Toolbar"/>
+			<RemoveFiles Path="PegahFramework.Terminal\InstanceTranslations\ToolbarMenu.de.View.xlsx" DependsOn="LoadNorthwind,Toolbar"/>
+			<RemoveLine Path="PegahFramework\Products\CategoryEntity.cs" Line="[TranslateField] //Localize categoryName column" DependsOn="ExampleEntities"/>
+			<RemoveLine Path="PegahFramework\Products\CategoryEntity.cs" Line="[TranslateField] //Localize description column" DependsOn="ExampleEntities"/>
+			<RemoveLine Path="PegahFramework\Layout.tsx" Line="{!hasUser &amp;&amp; &lt;CultureDropdown />}"/>
+			<RemoveLine Path="PegahFramework\Layout.tsx" Line="extraMenuItems={u => hasUser &amp;&amp; &lt;CultureDropdownMenuItem />}"/>
+			<RemoveLine Path="PegahFramework\PegahFramework.csproj" Line="&lt;ProjectReference Include=&quot;..\Framework\Extensions\Signum.Translation\Signum.Translation.csproj&quot; />"/>
+			<RemoveProjectReference Path="Framework\Extensions\Signum.Translation\Signum.Translation.csproj"/>
+		</Module>
+
+		<Module Name="Auth_ResetPasswordRequest" DependsOn="Auth,Mailing">
+			<RemoveLine Path="PegahFramework\Starter.cs" Line="ResetPasswordRequestLogic.Start(sb);"/>
+			<RemoveLine Path="PegahFramework\Starter.cs" Line="using Signum.Authorization.ResetPassword;"/>
+			<RemoveLine Path="PegahFramework\PegahFramework.csproj" Line="&lt;ProjectReference Include=&quot;..\Framework\Extensions\Signum.Authorization.ResetPassword\Signum.Authorization.ResetPassword.csproj&quot; />"/>
+			<RemoveProjectReference Path="Framework\Extensions\Signum.Authorization.ResetPassword\Signum.Authorization.ResetPassword.csproj"/>
+		</Module>
+
+		<Module Name="Auth_UserTicket" DependsOn="Auth">
+			<RemoveLine Path="PegahFramework\Starter.cs" Line="using Signum.Authorization.UserTicket;"/>
+			<RemoveLine Path="PegahFramework\Starter.cs" Line="UserTicketLogic.Start(sb);"/>
+		</Module>
+
+		<Module Name="SessionLog" DependsOn="Auth">
+			<RemoveLine Path="PegahFramework\Starter.cs" Line="using Signum.Authorization.SessionLog;"/>
+			<RemoveLine Path="PegahFramework\Starter.cs" Line="SessionLogLogic.Start(sb);"/>
+			<RemoveLine Path="PegahFramework.Terminal\Toolbar.xml" Line="&lt;ToolbarElement Type=&quot;Item&quot; Content=&quot;SessionLog&quot; />" />
+		</Module>
+
+		<Module Name="Alerts" DependsOn="SignalR">
+			<RemoveLine Path="PegahFramework\Starter.cs" Line="using Signum.Alerts;"/>
+			<RemoveLine Path="PegahFramework\Starter.cs" Line="AlertLogic.Start(sb, typeof(UserEntity), /*Alert*/typeof(OrderEntity));"/>
+			<RemoveSpanInLines Path="PegahFramework\Starter.cs" Span=", /*Alert*/typeof(OrderEntity)" DependsOn="ExampleEntities" />
+			<RemoveLine Path="PegahFramework\Starter.cs" Line="sb.Schema.Settings.FieldAttributes((AlertEntity a) => a.CreatedBy).Replace(new ImplementedByAttribute(typeof(UserEntity)));"/>
+			<RemoveLine Path="PegahFramework\Starter.cs" Line="sb.Schema.Settings.FieldAttributes((AlertEntity a) => a.Recipient).Replace(new ImplementedByAttribute(typeof(UserEntity)));"/>
+			<RemoveLine Path="PegahFramework\Starter.cs" Line="sb.Schema.Settings.FieldAttributes((AlertEntity a) => a.AttendedBy).Replace(new ImplementedByAttribute(typeof(UserEntity)));"/>
+			<RemoveLine Path="PegahFramework\Layout.tsx" Line="const AlertDropdown = React.lazy(() => import(&quot;@extensions/Signum.Alerts/AlertDropdown&quot;));"/>
+			<RemoveLine Path="PegahFramework\Layout.tsx" Line="{hasUser &amp;&amp; &lt;React.Suspense fallback={null}>&lt;AlertDropdown />&lt;/React.Suspense>}"/>
+			<RemoveLine Path="PegahFramework\MainAdmin.tsx" Line="import { AlertsClient } from &quot;@extensions/Signum.Alerts/AlertsClient&quot;"/>
+			<RemoveLine Path="PegahFramework\MainAdmin.tsx" Line="AlertsClient.start({ routes, showAlerts: a => false });"/>
+			<RemoveLine Path="PegahFramework\PegahFramework.csproj" Line="&lt;ProjectReference Include=&quot;..\Framework\Extensions\Signum.Alerts\Signum.Alerts.csproj&quot; />"/>
+			<RemoveProjectReference Path="Framework\Extensions\Signum.Alerts\Signum.Alerts.csproj"/>
+		</Module>
+		
+		<Module Name="SignalR" DependsOn="Auth">
+			<RemoveLine Path="PegahFramework.Server\Program.cs" Line="builder.Services.AddSignalR();"/>
+			<RemoveLine Path="PegahFramework\Index.cshtml" Line="var __disableSignalR = @Json.Serialize(Signum.ConcurrentUser.ConcurrentUserServer.DisableSignalR);"/>
+		</Module>
+		
+		<Module Name="ConcurrentUser" DependsOn="SignalR">
+			<RemoveLine Path="PegahFramework\Starter.cs" Line="using Signum.ConcurrentUser;"/>
+			<RemoveLine Path="PegahFramework\Starter.cs" Line="ConcurrentUserLogic.Start(sb);"/>
+			<RemoveLine Path="PegahFramework\MainAdmin.tsx" Line="import { ConcurrentUserClient } from &quot;@extensions/Signum.ConcurrentUser/ConcurrentUserClient&quot;"/>
+			<RemoveLine Path="PegahFramework\MainAdmin.tsx" Line="ConcurrentUserClient.start({ routes });"/>
+			<RemoveLine Path="PegahFramework\PegahFramework.csproj" Line="&lt;ProjectReference Include=&quot;..\Framework\Extensions\Signum.ConcurrentUser\Signum.ConcurrentUser.csproj&quot; />"/>
+			<RemoveProjectReference Path="Framework\Extensions\Signum.ConcurrentUser\Signum.ConcurrentUser.csproj"/>
+		</Module>
+
+		<Module Name="Notes">
+			<RemoveLine Path="PegahFramework\Starter.cs" Line="using Signum.Notes;"/>
+			<RemoveLine Path="PegahFramework\Starter.cs" Line="NoteLogic.Start(sb, typeof(UserEntity), /*Note*/typeof(OrderEntity));"/>
+			<RemoveSpanInLines Path="PegahFramework\Starter.cs" Span=", /*Note*/typeof(OrderEntity)" DependsOn="ExampleEntities" />
+			<RemoveLine Path="PegahFramework\Starter.cs" Line="sb.Schema.Settings.FieldAttributes((NoteEntity n) => n.CreatedBy).Replace(new ImplementedByAttribute(typeof(UserEntity)));"/>
+			<RemoveLine Path="PegahFramework\PegahFramework.csproj" Line="&lt;ProjectReference Include=&quot;..\Framework\Extensions\Signum.Notes\Signum.Notes.csproj&quot; />"/>
+			<RemoveLine Path="PegahFramework\MainAdmin.tsx" Line="import { NotesClient } from &quot;@extensions/Signum.Notes/NotesClient&quot;"/>
+			<RemoveLine Path="PegahFramework\MainAdmin.tsx" Line="NotesClient.start({ routes, couldHaveNotes: a => false });"/>
+			<RemoveProjectReference Path="Framework\Extensions\Signum.Notes\Signum.Notes.csproj"/>
+		</Module>
+
+		<Module Name="Cache">
+			<RemoveLine Path="PegahFramework\Starter.cs" Line="using Signum.Cache;"/>
+			<RemoveLine Path="PegahFramework\Starter.cs" Line="using Signum.Cache.Broadcast;"/>
+			<RemoveLine Path="PegahFramework\Starter.cs" From="CacheLogic.Start(sb, serverBroadcast:" To="null);/*Cache*/"/>
+			<RemoveLine Path="PegahFramework\Starter.cs" Line="SetupCache(sb);"/>
+			<RemoveLine Path="PegahFramework\Starter.cs" From="private static void SetupCache(SchemaBuilder sb)" To="}"/>
+			<RemoveLine Path="PegahFramework\MainAdmin.tsx" Line="CacheClient.start({ routes });"/>
+			<RemoveLine Path="PegahFramework\PegahFramework.csproj" Line="&lt;ProjectReference Include=&quot;..\Framework\Extensions\Signum.Caching\Signum.Caching.csproj&quot; />"/>
+			<RemoveProjectReference Path="Framework\Extensions\Signum.Caching\Signum.Caching.csproj"/>
+		</Module>
+
+		<Module Name="SplitDB">
+			<RemoveLine Path="PegahFramework\Starter.cs" Line="string? logDatabase = Connector.TryExtractDatabaseNameWithPostfix(ref connectionString, &quot;_Log&quot;);"/>
+			<RemoveSpanInLines Path="PegahFramework\Starter.cs" Span="LogDatabaseName = logDatabase, "/>
+			<RemoveLine Path="PegahFramework\Starter.cs" Line="public string? LogDatabaseName;"/>
+			<RemoveLine Path="PegahFramework\Starter.cs" From="public Type[] InLogDatabase = new Type[]" To="};"/>
+			<RemoveLine Path="PegahFramework\Starter.cs" From="if (this.LogDatabaseName == null)" To="return new DatabaseName(null, this.LogDatabaseName, this.Schema.Settings.IsPostgres);"/>
+		</Module>
+
+		<Module Name="PublicCatalog" DependsOn="ExampleEntities,Translation,Cache,Files">
+
+			<RemoveFiles Path="PegahFramework\Public\CatalogController.cs"/>
+			<RemoveFiles Path="PegahFramework\Public\PublicCatalog.tsx"/>
+			<RemoveFiles Path="PegahFramework\Public\PublicClient.tsx"/>
+			<RemoveFiles Path="PegahFramework\Public\PublicController.cs"/>
+			<RemoveFiles Path="PegahFramework\Public\RegisterUserModel.cs"/>
+			<RemoveFiles Path="PegahFramework\Public\PegahFramework.Public.t4s"/>
+			<RemoveFiles Path="PegahFramework\Public\PegahFramework.Public.ts"/>
+			<RemoveFiles Path="PegahFramework\Public\RegisterUser.tsx"/>
+			<RemoveFiles Path="PegahFramework\Public\PublicLogic.cs" />
+			<RemoveLine Path="PegahFramework\MainPublic.tsx"
+						Line="import { PublicClient } from './Public/PublicClient'" />
+
+			<RemoveLine Path="PegahFramework\MainPublic.tsx"
+						Line="PublicClient.startPublic({ routes });" />
+
+			<RemoveLine Path="PegahFramework\Starter.cs" Line="using PegahFramework.Public;" />
+			<RemoveLine Path="PegahFramework\Starter.cs" Line="PublicLogic.Start(sb);" />
+		
+
+
+			<RemoveLine Path="PegahFramework\Products\ProductsLogic.cs" Line="public static ResetLazy&lt;FrozenDictionary&lt;CategoryEntity, List&lt;ProductEntity&gt;&gt;&gt; ActiveProducts = null!;"/>
+			<RemoveLine Path="PegahFramework\Products\ProductsLogic.cs" From="ActiveProducts = sb.GlobalLazy(() =>" To="new InvalidateWith(typeof(ProductEntity)));"/>
+			<RemoveLine Path="PegahFramework\MainPublic.tsx" Line="routes.push({ path: &quot;/publicCatalog&quot;, element: &lt;PublicCatalog /> });"/>
+			<RemoveLine Path="PegahFramework\MainPublic.tsx" Line="import PublicCatalog from './Public/PublicCatalog'"/>
+			<RemoveLine Path="PegahFramework\Home.tsx" From="if (!AuthClient.currentUser()) {" To="}//PublicCatalog"/>
+
+
+
+		</Module>
+
+		<Module Name="Profiler">
+			<RemoveLine Path="PegahFramework\Starter.cs" Line="using Signum.Profiler;"/>
+			<RemoveLine Path="PegahFramework\Starter.cs" From="ProfilerLogic.Start(sb," To="overrideSessionTimeout: true);"/>
+			<RemoveLine Path="PegahFramework\MainAdmin.tsx" Line="import { ProfilerClient } from &quot;@extensions/Signum.Profiler/ProfilerClient&quot;"/>
+			<RemoveLine Path="PegahFramework\MainAdmin.tsx" Line="ProfilerClient.start({ routes });"/>
+			<RemoveLine Path="PegahFramework\PegahFramework.csproj" Line="&lt;ProjectReference Include=&quot;..\Framework\Extensions\Signum.Profiler\Signum.Profiler.csproj&quot; />"/>
+			<RemoveProjectReference Path="Framework\Extensions\Signum.Profiler\Signum.Profiler.csproj"/>
+		</Module>
+
+		<Module Name="Omnibox">
+			<RemoveLine Path="PegahFramework\Starter.cs" Line="using Signum.Omnibox;"/>
+			<RemoveLine Path="PegahFramework\Starter.cs" Line="OmniboxLogic.Start(sb);"/>
+			<RemoveLine Path="PegahFramework\Layout.tsx" Line="{hasUser &amp;&amp; AppContext.isPermissionAuthorized(OmniboxPermission.ViewOmnibox) &amp;&amp; &lt;OmniboxAutocomplete inputAttrs={{ className: &quot;form-control omnibox&quot; }} />}"/>
+			<RemoveLine Path="PegahFramework\MainAdmin.tsx" Line="import { OmniboxClient } from &quot;@extensions/Signum.Omnibox/OmniboxClient&quot;"/>
+			<RemoveLine Path="PegahFramework\MainAdmin.tsx" Line="OmniboxClient.start();"/>
+			<RemoveLine Path="PegahFramework\PegahFramework.csproj" Line="&lt;ProjectReference Include=&quot;..\Framework\Extensions\Signum.Omnibox\Signum.Omnibox.csproj&quot; />"/>
+			<RemoveProjectReference Path="Framework\Extensions\Signum.Omnibox\Signum.Omnibox.csproj"/>
+		</Module>
+
+		<Module Name="Map">
+			<RemoveLine Path="PegahFramework\Starter.cs" Line="using Signum.Map;"/>
+			<RemoveLine Path="PegahFramework\Starter.cs" Line="MapLogic.Start(sb);"/>
+			<RemoveLine Path="PegahFramework\MainAdmin.tsx" Line="import { MapClient } from &quot;@extensions/Signum.Map/MapClient&quot;"/>
+			<RemoveLine Path="PegahFramework\MainAdmin.tsx" Line="MapClient.start({ routes });"/>
+			<RemoveLine Path="PegahFramework\PegahFramework.csproj" Line="&lt;ProjectReference Include=&quot;..\Framework\Extensions\Signum.Map\Signum.Map.csproj&quot; />"/>
+			<RemoveProjectReference Path="Framework\Extensions\Signum.Map\Signum.Map.csproj"/>
+		</Module>
+
+		<Module Name="Help">
+			<RemoveLine Path="PegahFramework\Starter.cs" Line="using Signum.Help;"/>
+			<RemoveLine Path="PegahFramework.Terminal\Program.cs" Line="using Signum.Help;"/>
+			<RemoveLine Path="PegahFramework.Terminal\Program.cs" Line="{&quot;HL&quot;, HelpXml.ImportExportHelp},"/>
+			<RemoveLine Path="PegahFramework\Starter.cs" Line="HelpLogic.Start(sb, GetFileTypeAlgorithm(p => p.HelpImagesFolder));"/>
+			<RemoveLine Path="PegahFramework\PegahFramework.csproj" Line="&lt;ProjectReference Include=&quot;..\Framework\Extensions\Signum.Help\Signum.Help.csproj&quot; />"/>
+			<RemoveProjectReference Path="Framework\Extensions\Signum.Help\Signum.Help.csproj"/>
+			<RemoveLine Path="PegahFramework\MainAdmin.tsx" Line="import { HelpClient } from &quot;@extensions/Signum.Help/HelpClient&quot;"/>
+			<RemoveLine Path="PegahFramework\MainAdmin.tsx" Line="HelpClient.start({ routes });"/>
+			<RemoveLine Path="PegahFramework\Globals\ApplicationConfigurationEntity.cs" From="/*Help*/" To="public string HelpImagesFolder { get; set; }"/>
+			<RemoveLine DependsOn="PublicAPI" Path="PegahFramework.Terminal\PegahFrameworkMigrations.cs" Line="HelpImagesFolder = localPrefix + @&quot;help-image&quot;,"/>
+			<RemoveLine DependsOn="PublicAPI" Path="PegahFramework.Test.Environment\PegahFrameworkEnvironment.cs" Line="HelpImagesFolder = localPrefix + @&quot;help-image&quot;,"/>
+
+		</Module>
+
+		<Module Name="PublicAPI">
+			<RemoveLine Path="PegahFramework\Starter.cs" Line="using Signum.Rest;"/>
+			<RemoveLine Path="PegahFramework\Starter.cs" Line="RestLogLogic.Start(sb);"/>
+			<RemoveLine Path="PegahFramework\Starter.cs" Line="RestApiKeyLogic.Start(sb);"/>
+			<RemoveLine Path="PegahFramework\Starter.cs" Line="sb.Schema.Settings.FieldAttributes((RestLogEntity a) => a.User).Replace(new ImplementedByAttribute(typeof(UserEntity)));"/>
+			<RemoveLine Path="PegahFramework\Layout.tsx" From="&lt;Nav.Item> {/*Swagger*/}" To="&lt;/Nav.Item> {/*Swagger*/}"/>
+			<RemoveLine Path="PegahFramework\Layout.tsx" From="function handleSwaggerClick(e: React.MouseEvent&lt;any>) {" To="} //Swagger"/>
+			<RemoveLine Path="PegahFramework\MainAdmin.tsx" Line="import { RestClient } from &quot;@extensions/Signum.Rest/RestClient&quot;"/>
+			<RemoveLine Path="PegahFramework\MainAdmin.tsx" Line="RestClient.start({ routes });"/>
+			<RemoveFiles Path="PegahFramework\Public\CatalogAPIController.cs"/>
+			<RemoveLine Path="PegahFramework.Server\Program.cs" Line="//https://docs.microsoft.com/en-us/aspnet/core/tutorials/getting-started-with-swashbuckle?view=aspnetcore-2.1&amp;tabs=visual-studio%2Cvisual-studio-xml" />
+			<RemoveLine Path="PegahFramework.Server\Program.cs" Line="SwaggerConfig.ConfigureSwaggerService(builder);" />
+			<RemoveLine Path="PegahFramework.Server\Program.cs" From="//Enable middleware to serve generated Swagger as a JSON endpoint." To="});//Swagger Configure"/>
+			<RemoveFiles Path="PegahFramework\SwaggerConfig.cs" />
+
+			<RemoveLine Path="PegahFramework\PegahFramework.csproj" Line="&lt;ProjectReference Include=&quot;..\Framework\Extensions\Signum.Rest\Signum.Rest.csproj&quot; />"/>
+			<RemoveProjectReference Path="Framework\Extensions\Signum.Rest\Signum.Rest.csproj"/>
+		</Module>
+
+		<Module Name="Predictor" DependsOn="Files">
+			<RemoveLine Path="PegahFramework\Starter.cs" Line="using Signum.MachineLearning;"/>
+			<RemoveLine Path="PegahFramework.Terminal\PegahFrameworkMigrations.cs" Line="using Signum.MachineLearning;"/>
+			<RemoveLine Path="PegahFramework.Terminal\Program.cs" Line="using Signum.MachineLearning;"/>
+			<RemoveLine Path="PegahFramework\Starter.cs" Line="using Signum.MachineLearning.TensorFlow;"/>
+			<RemoveLine Path="PegahFramework\Globals\ApplicationConfigurationEntity.cs" From="/*Predictor*/" To="public string PredictorModelFolder { get; set; }"/>
+			<RemoveLine DependsOn="ExampleEntities" Path="PegahFramework.Terminal\PegahFrameworkMigrations.cs" Line="ImportPredictor,"/>
+			<RemoveLine Path="PegahFramework.Terminal\PegahFrameworkMigrations.cs" Line="PredictorModelFolder = localPrefix + @&quot;predictor-models&quot;,"/>
+			<RemoveLine Path="PegahFramework.Test.Environment\PegahFrameworkEnvironment.cs" Line="PredictorModelFolder = localPrefix + @&quot;predictor-models&quot;,"/>
+			<RemoveLine DependsOn="ExampleEntities" Path="PegahFramework.Terminal\PegahFrameworkMigrations.cs" From="public static void ImportPredictor()" To="}//ImportPredictor"/>
+			<RemoveLine DependsOn="ExampleEntities" Path="PegahFramework.Terminal\Program.cs" Line="{&quot;TP&quot;, TrainPredictor},"/>
+			<RemoveLine DependsOn="ExampleEntities" Path="PegahFramework.Terminal\Program.cs" From="static void TrainPredictor()" To="}//TrainPredictor"/>
+
+			<RemoveLine Path="PegahFramework.Terminal\PegahFramework.Terminal.csproj" Line="&lt;PackageReference Include=&quot;SciSharp.TensorFlow.Redist&quot; Version=&quot;2.16.0&quot; />"/>
+			<RemoveLine Path="PegahFramework\PegahFramework.csproj" Line="&lt;PackageReference Include=&quot;SciSharp.TensorFlow.Redist&quot; Version=&quot;2.16.0&quot; />"/>
+			<RemoveSpanInLines Path="PegahFramework\Starter.cs" Span=", typeof(PredictorEntity)"/>
+
+			<RemoveLine Path="PegahFramework\Starter.cs"
+						From="PredictorLogic.Start(sb, GetFileTypeAlgorithm(p => p.PredictorModelFolder));"
+						To="PredictorLogic.RegisterAlgorithm(TensorFlowPredictorAlgorithm.NeuralNetworkGraph, new TensorFlowNeuralNetworkPredictor());"/>
+			<RemoveLine Path="PegahFramework\Starter.cs" Line="PredictorLogic.IgnorePinned(sb);" />
+			<RemoveLine Path="PegahFramework\Starter.cs" DependsOn="ExampleEntities" Line="PredictorLogic.RegisterPublication(ProductPredictorPublication.MonthlySales, new PublicationSettings(typeof(OrderEntity)));"/>
+			<RemoveSpanInLines Path="PegahFramework\Starter.cs" Span=", typeof(AutoconfigureNeuralNetworkEntity)"/>
+			<RemoveLine Path="PegahFramework\MainAdmin.tsx" Line="import { PredictorClient } from &quot;@extensions/Signum.MachineLearning/PredictorClient&quot;"/>
+			<RemoveLine Path="PegahFramework\MainAdmin.tsx" Line="PredictorClient.start({ routes });"/>
+			<RemoveLine DependsOn="ExampleEntities" Path="PegahFramework\Products\ProductEntity.cs" From="[AutoInit]//Predictor" To="}//Predictor"/>
+			<RemoveFiles DependsOn="ExampleEntities" Path="PegahFramework\Products\SalesEstimationController.cs"/>
+			<RemoveFiles DependsOn="ExampleEntities" Path="PegahFramework\Products\SalesEstimation.tsx"/>
+			<RemoveLine DependsOn="ExampleEntities" Path="PegahFramework\Products\Product.tsx" Line="import SalesEstimation from './SalesEstimation';"/>
+			<RemoveLine DependsOn="ExampleEntities" Path="PegahFramework\Products\Product.tsx" Line="{!ctx.value.isNew &amp;&amp; &lt;SalesEstimation ctx={ctx} />}"/>
+			<RemoveLine Path="PegahFramework\PegahFramework.csproj" Line="&lt;ProjectReference Include=&quot;..\Framework\Extensions\Signum.MachineLearning\Signum.MachineLearning.csproj&quot; />"/>
+			<RemoveProjectReference Path="Framework\Extensions\Signum.MachineLearning\Signum.MachineLearning.csproj"/>
+		</Module>
+
+		<Module Name="TimeMachine">
+			<RemoveLine Path="PegahFramework\Starter.cs" Line="using Signum.TimeMachine;"/>
+			<RemoveLine Path="PegahFramework\Starter.cs" Line="TimeMachineLogic.Start(sb);"/>
+			<RemoveLine Path="PegahFramework\MainAdmin.tsx" Line="import { TimeMachineClient } from &quot;@extensions/Signum.TimeMachine/TimeMachineClient&quot;"/>
+			<RemoveLine Path="PegahFramework\MainAdmin.tsx" Line="TimeMachineClient.start({ routes });"/>
+		</Module>
+
+		<Module Name="Dynamic">
+			<RemoveLine Path="PegahFramework\Starter.cs" Line="using Signum.Dynamic;"/>
+			<RemoveLine Path="PegahFramework.Server\Program.cs" Line="using Signum.Dynamic;"/>
+			<RemoveLine Path="PegahFramework.Terminal\Program.cs" Line="using Signum.Dynamic;"/>
+			<RemoveFiles Path="PegahFramework\DynamicLogicStarter.cs" />
+			<RemoveLine Path="PegahFramework\Starter.cs" Line="StartParameters.IgnoredDatabaseMismatches = new List&lt;Exception>();"/>
+			<RemoveLine Path="PegahFramework\Starter.cs" Line="StartParameters.IgnoredCodeErrors = new List&lt;Exception>();"/>
+			<RemoveLine Path="PegahFramework\Starter.cs" From="DynamicLogicStarter.Start(sb);" To="}//Dynamic"/>
+			<RemoveLine Path="PegahFramework\Starter.cs" From="if (includeDynamic)//2" To="}//2"/>
+			<RemoveLine Path="PegahFramework\Starter.cs" From="if (includeDynamic)//3" To="}//3"/>
+			<RemoveLine Path="PegahFramework\MainAdmin.tsx"
+						From="import { DynamicClient } from &quot;@extensions/Signum.Dynamic/DynamicClient&quot;"
+						To="import { DynamicViewClient } from &quot;@extensions/Signum.Dynamic/DynamicViewClient&quot;"/>
+			<RemoveLine Path="PegahFramework\MainAdmin.tsx"
+						From="DynamicClient.start({ routes, withCodeGen: true });"
+						To="DynamicViewClient.start({ routes });"/>
+						
+			<RemoveLine Path="PegahFramework.Terminal\Program.cs" Line="DynamicLogic.CodeGenDirectory = @&quot;..\..\..\..\PegahFramework.Server\CodeGen&quot;;"/>
+			<RemoveLine Path="PegahFramework.Server\Program.cs" Line="DynamicLogic.CodeGenDirectory = app.Environment.ContentRootPath + &quot;\\CodeGen&quot;;"/>
+			<RemoveLine Path="PegahFramework\PegahFramework.csproj" Line="&lt;ProjectReference Include=&quot;..\Framework\Extensions\Signum.Dynamic\Signum.Dynamic.csproj&quot; />"/>
+			<RemoveProjectReference Path="Framework\Extensions\Signum.Dynamic\Signum.Dynamic.csproj"/>
+			<RemoveProjectReference Path="Framework\Extensions\Signum.Tree\Signum.Tree.csproj"/>
+		</Module>
+
+		<Module Name="Workflow">
+			<RemoveLine Path="PegahFramework.Test.Environment\PegahFrameworkEnvironment.cs" Line="using Signum.Workflow;"/>
+			<RemoveLine Path="PegahFramework\Starter.cs" Line="using Signum.Workflow;"/>
+			<RemoveLine Path="PegahFramework.Terminal\PegahFrameworkMigrations.cs" Line="using Signum.Workflow;"/>
+			<RemoveSpanInLines Path="PegahFramework\Starter.cs" Span=", typeof(WorkflowEntity)"/>
+			<RemoveLine Path="PegahFramework\Globals\ApplicationConfigurationEntity.cs" Line="using Signum.Workflow;"/>
+			<RemoveLine Path="PegahFramework\Globals\ApplicationConfigurationEntity.cs" From="/*Workflow*/" To="public WorkflowConfigurationEmbedded Workflow { get; set; }"/>
+			<RemoveLine Path="PegahFramework\Globals\ApplicationConfiguration.tsx" From="&lt;Tab eventKey=&quot;workflow&quot; title={ctx.niceName(a => a.workflow)}>" To="&lt;/Tab>"/>
+			<RemoveLine Path="PegahFramework\Starter.cs" Line="WorkflowLogicStarter.Start(sb, () => Configuration.Value.Workflow);"/>
+			<RemoveLine Path="PegahFramework\MainAdmin.tsx" Line="import { WorkflowClient } from &quot;@extensions/Signum.Workflow/WorkflowClient&quot;" />
+			<RemoveLine Path="PegahFramework\MainAdmin.tsx" Line="WorkflowClient.start({ routes });"/>
+			<RemoveLine Path="PegahFramework.Terminal\PegahFrameworkMigrations.cs" From="Workflow = new WorkflowConfigurationEmbedded" To="}, //Workflow"/>
+			<RemoveLine Path="PegahFramework.Test.Environment\PegahFrameworkEnvironment.cs" From="Workflow = new WorkflowConfigurationEmbedded" To="}, //Workflow"/>
+			<RemoveLine Path="PegahFramework\PegahFramework.csproj" Line="&lt;ProjectReference Include=&quot;..\Framework\Extensions\Signum.Workflow\Signum.Workflow.csproj&quot; />"/>
+			<RemoveProjectReference Path="Framework\Extensions\Signum.Workflow\Signum.Workflow.csproj"/>
+
+		</Module>
+
+		<Module Name="Test.Environment">
+			<RemoveFiles Path="PegahFramework.Test.Environment"/>
+
+			<RemoveLine DependsOn="ExampleEntities"  Path="PegahFramework.Test.Environment\PegahFrameworkEnvironment.cs"
+						From="internal static void LoadEmployees()"
+						To="} //LoadEmployees" />
+			<RemoveLine DependsOn="ExampleEntities" Path="PegahFramework.Test.Environment\PegahFrameworkEnvironment.cs"
+						 From="internal static void LoadProducts()"
+						 To="}//LoadShippers" />
+			<RemoveFiles DependsOn="ExampleEntities" Path="PegahFramework.Test.Environment\PegahFrameworkExtensions.cs" />
+
+			<RemoveLine DependsOn="ExampleEntities" Path="PegahFramework.Test.Environment\EnvironmentTest.cs" Line="PegahFrameworkEnvironment.LoadEmployees();"/>
+			<RemoveLine DependsOn="ExampleEntities" Path="PegahFramework.Test.Environment\EnvironmentTest.cs" Line="PegahFrameworkEnvironment.LoadProducts();"/>
+			<RemoveLine DependsOn="ExampleEntities" Path="PegahFramework.Test.Environment\EnvironmentTest.cs" Line="PegahFrameworkEnvironment.LoadCustomers();"/>
+			<RemoveLine DependsOn="ExampleEntities" Path="PegahFramework.Test.Environment\EnvironmentTest.cs" Line="PegahFrameworkEnvironment.LoadShippers();"/>
+		</Module>
+
+		<Module Name="Test.Logic" DependsOn="Test.Environment">
+			<RemoveFiles Path="PegahFramework.Test.Logic"/>
+			<RemoveLine DependsOn="ExampleEntities" Path="PegahFramework.Test.Logic\OrderTest.cs" From="[Fact]" To="}//OrderTestExample"/>
+		</Module>vp
+
+		<Module Name="Test.React" DependsOn="Test.Environment">
+			<RemoveFiles Path="PegahFramework.Test.React"/>
+			<RemoveLine DependsOn="ExampleEntities" Path="PegahFramework.Test.React\OrderReactTest.cs" From="[Fact]" To="}//OrderReactTestExample"/>
+			<RemoveProjectReference Path="Framework\Extensions\Signum.Selenium\Signum.Selenium.csproj"/>
+		</Module>
+
+		<Module Name="Docker">
+			<RemoveFiles Path="PegahFramework.Server\Dockerfile"/>
+			<RemoveFiles Path=".dockerignore"/>
+			<RemoveFiles Path="deployToAzureLIVE.ps1"/>
+			<RemoveFiles Path="deployToAzureTEST.ps1"/>
+		</Module>
+
+		<Module Name="Bicep">
+			<RemoveFiles Path="azure-container-registry.bicep"/>
+			<RemoveFiles Path="azure-main-sqls-postgres.bicep" />
+			<RemoveFiles Path="azure-environment.bicep" />
+			<RemoveFiles Path="azure-main-live-test.bicep" />
+		</Module>
+
+		<Module Name="GitlabCICD">
+			<RemoveFiles Path=".gitlab-ci.yml" />
+		</Module>
+	</Modules>
+
+	<Projects>
+		<Project Path ="PegahFramework\PegahFramework.csproj"/>
+		<Project Path ="PegahFramework.Terminal\PegahFramework.Terminal.csproj"/>
+		<Project Path ="PegahFramework.Test.Environment\PegahFramework.Test.Environment.csproj"/>
+		<Project Path ="PegahFramework.Test.Logic\PegahFramework.Test.Logic.csproj"/>
+		<Project Path ="PegahFramework.Test.React\PegahFramework.Test.React.csproj"/>
+	</Projects>
+
+	<Solutions>
+		<Solution Path="PegahFramework.sln" />
+	</Solutions>
+</File>
